@@ -16,8 +16,8 @@ Method | HTTP request | Description
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = ConveyorFinanceApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 

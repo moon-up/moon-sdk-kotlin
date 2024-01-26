@@ -27,8 +27,8 @@ Method | HTTP request | Description
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = Erc721Api()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -82,8 +82,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = Erc721Api()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -137,8 +137,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = Erc721Api()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -192,8 +192,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = Erc721Api()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -247,8 +247,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = Erc721Api()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -302,8 +302,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = Erc721Api()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -357,8 +357,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = Erc721Api()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -412,8 +412,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = Erc721Api()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -467,8 +467,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = Erc721Api()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -522,8 +522,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = Erc721Api()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -577,8 +577,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = Erc721Api()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -632,8 +632,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = Erc721Api()
 val authorization : kotlin.String = authorization_example // kotlin.String | 

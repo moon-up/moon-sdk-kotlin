@@ -21,8 +21,8 @@ Method | HTTP request | Description
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = OneinchApi()
 val body : kotlin.Any =  // kotlin.Any | 
@@ -72,8 +72,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = OneinchApi()
 val body : kotlin.Any =  // kotlin.Any | 
@@ -123,8 +123,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = OneinchApi()
 val body : kotlin.Any =  // kotlin.Any | 
@@ -174,8 +174,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = OneinchApi()
 val body : kotlin.Any =  // kotlin.Any | 
@@ -225,8 +225,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = OneinchApi()
 val accountName : kotlin.String = accountName_example // kotlin.String | 
@@ -280,8 +280,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = OneinchApi()
 val body : kotlin.Any =  // kotlin.Any | 

@@ -4,6 +4,10 @@ All URIs are relative to *https://vault-api.usemoon.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createPaymentIntentConfig**](PaymentApi.md#createPaymentIntentConfig) | **POST** /payment/config | 
+[**deletePaymentIntentConfig**](PaymentApi.md#deletePaymentIntentConfig) | **DELETE** /payment/config/{id} | 
+[**getAllPaymentIntentConfigs**](PaymentApi.md#getAllPaymentIntentConfigs) | **GET** /payment/config | 
+[**getOnePaymentIntentConfigs**](PaymentApi.md#getOnePaymentIntentConfigs) | **GET** /payment/config/{id} | 
 [**moralisWebhook**](PaymentApi.md#moralisWebhook) | **POST** /payment/webhook/{id} | 
 [**paymentCreatePaymentIntent**](PaymentApi.md#paymentCreatePaymentIntent) | **POST** /payment | 
 [**paymentDeletePaymentIntent**](PaymentApi.md#paymentDeletePaymentIntent) | **DELETE** /payment/{id} | 
@@ -11,8 +15,219 @@ Method | HTTP request | Description
 [**paymentGetAvailableChains**](PaymentApi.md#paymentGetAvailableChains) | **GET** /payment/chains | 
 [**paymentGetPaymentIntent**](PaymentApi.md#paymentGetPaymentIntent) | **GET** /payment/{id} | 
 [**paymentUpdatePaymentIntent**](PaymentApi.md#paymentUpdatePaymentIntent) | **PUT** /payment/{id} | 
-[**tatumWebhook**](PaymentApi.md#tatumWebhook) | **POST** /payment/tatum/webhook/{id} | 
+[**tatumWebhook**](PaymentApi.md#tatumWebhook) | **POST** /payment/webhook/tatum/{id} | 
+[**updatePaymentIntentConfig**](PaymentApi.md#updatePaymentIntentConfig) | **PUT** /payment/config/{id} | 
 
+
+<a id="createPaymentIntentConfig"></a>
+# **createPaymentIntentConfig**
+> kotlin.Any createPaymentIntentConfig(authorization, body)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
+
+val apiInstance = PaymentApi()
+val authorization : kotlin.String = authorization_example // kotlin.String | 
+val body : kotlin.Any =  // kotlin.Any | 
+try {
+    val result : kotlin.Any = apiInstance.createPaymentIntentConfig(authorization, body)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling PaymentApi#createPaymentIntentConfig")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling PaymentApi#createPaymentIntentConfig")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **kotlin.String**|  |
+ **body** | **kotlin.Any**|  |
+
+### Return type
+
+[**kotlin.Any**](kotlin.Any.md)
+
+### Authorization
+
+
+Configure ApiKeyAuth:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+Configure BearerAuth:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="deletePaymentIntentConfig"></a>
+# **deletePaymentIntentConfig**
+> PaymentIntentResponse deletePaymentIntentConfig(authorization, id)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
+
+val apiInstance = PaymentApi()
+val authorization : kotlin.String = authorization_example // kotlin.String | 
+val id : kotlin.String = id_example // kotlin.String | 
+try {
+    val result : PaymentIntentResponse = apiInstance.deletePaymentIntentConfig(authorization, id)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling PaymentApi#deletePaymentIntentConfig")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling PaymentApi#deletePaymentIntentConfig")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **kotlin.String**|  |
+ **id** | **kotlin.String**|  |
+
+### Return type
+
+[**PaymentIntentResponse**](PaymentIntentResponse.md)
+
+### Authorization
+
+
+Configure ApiKeyAuth:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+Configure BearerAuth:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="getAllPaymentIntentConfigs"></a>
+# **getAllPaymentIntentConfigs**
+> kotlin.collections.List&lt;PaymentIntentResponse&gt; getAllPaymentIntentConfigs(authorization)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
+
+val apiInstance = PaymentApi()
+val authorization : kotlin.String = authorization_example // kotlin.String | 
+try {
+    val result : kotlin.collections.List<PaymentIntentResponse> = apiInstance.getAllPaymentIntentConfigs(authorization)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling PaymentApi#getAllPaymentIntentConfigs")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling PaymentApi#getAllPaymentIntentConfigs")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **kotlin.String**|  |
+
+### Return type
+
+[**kotlin.collections.List&lt;PaymentIntentResponse&gt;**](PaymentIntentResponse.md)
+
+### Authorization
+
+
+Configure ApiKeyAuth:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+Configure BearerAuth:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="getOnePaymentIntentConfigs"></a>
+# **getOnePaymentIntentConfigs**
+> PaymentIntentResponse getOnePaymentIntentConfigs(authorization, id)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
+
+val apiInstance = PaymentApi()
+val authorization : kotlin.String = authorization_example // kotlin.String | 
+val id : kotlin.String = id_example // kotlin.String | 
+try {
+    val result : PaymentIntentResponse = apiInstance.getOnePaymentIntentConfigs(authorization, id)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling PaymentApi#getOnePaymentIntentConfigs")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling PaymentApi#getOnePaymentIntentConfigs")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **kotlin.String**|  |
+ **id** | **kotlin.String**|  |
+
+### Return type
+
+[**PaymentIntentResponse**](PaymentIntentResponse.md)
+
+### Authorization
+
+
+Configure ApiKeyAuth:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+Configure BearerAuth:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a id="moralisWebhook"></a>
 # **moralisWebhook**
@@ -23,8 +238,8 @@ Method | HTTP request | Description
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = PaymentApi()
 val id : kotlin.String = id_example // kotlin.String | 
@@ -76,8 +291,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = PaymentApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -129,8 +344,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = PaymentApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -182,8 +397,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = PaymentApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -233,8 +448,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = PaymentApi()
 try {
@@ -280,8 +495,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = PaymentApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -333,8 +548,8 @@ Configure BearerAuth:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = PaymentApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
@@ -381,21 +596,21 @@ Configure BearerAuth:
 
 <a id="tatumWebhook"></a>
 # **tatumWebhook**
-> kotlin.Any tatumWebhook(id, body)
+> kotlin.Any tatumWebhook(id, tatumTransactionEvent)
 
 
 
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
 
 val apiInstance = PaymentApi()
 val id : kotlin.String = id_example // kotlin.String | 
-val body : kotlin.Any =  // kotlin.Any | 
+val tatumTransactionEvent : TatumTransactionEvent =  // TatumTransactionEvent | 
 try {
-    val result : kotlin.Any = apiInstance.tatumWebhook(id, body)
+    val result : kotlin.Any = apiInstance.tatumWebhook(id, tatumTransactionEvent)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling PaymentApi#tatumWebhook")
@@ -411,11 +626,66 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **kotlin.String**|  |
- **body** | **kotlin.Any**|  |
+ **tatumTransactionEvent** | [**TatumTransactionEvent**](TatumTransactionEvent.md)|  |
 
 ### Return type
 
 [**kotlin.Any**](kotlin.Any.md)
+
+### Authorization
+
+
+Configure ApiKeyAuth:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+Configure BearerAuth:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="updatePaymentIntentConfig"></a>
+# **updatePaymentIntentConfig**
+> PaymentIntentResponse updatePaymentIntentConfig(authorization, id, body)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.usemoonai.moonsdk.infrastructure.*
+//import org.usemoonai.moonsdk.models.*
+
+val apiInstance = PaymentApi()
+val authorization : kotlin.String = authorization_example // kotlin.String | 
+val id : kotlin.String = id_example // kotlin.String | 
+val body : kotlin.Any =  // kotlin.Any | 
+try {
+    val result : PaymentIntentResponse = apiInstance.updatePaymentIntentConfig(authorization, id, body)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling PaymentApi#updatePaymentIntentConfig")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling PaymentApi#updatePaymentIntentConfig")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **kotlin.String**|  |
+ **id** | **kotlin.String**|  |
+ **body** | **kotlin.Any**|  |
+
+### Return type
+
+[**PaymentIntentResponse**](PaymentIntentResponse.md)
 
 ### Authorization
 
