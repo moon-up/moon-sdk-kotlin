@@ -15,6 +15,7 @@
 
 package org.usemoonai.moonsdk.models
 
+import org.usemoonai.moonsdk.models.AccountData
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -22,18 +23,14 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param propertyKeys 
- * @param address 
+ * @param `data` 
  */
 
 
 data class AccountResponse (
 
-    @Json(name = "keys")
-    val propertyKeys: kotlin.collections.List<kotlin.String>? = null,
-
-    @Json(name = "address")
-    val address: kotlin.String? = null
+    @Json(name = "data")
+    val `data`: AccountData
 
 )
 

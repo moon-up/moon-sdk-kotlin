@@ -40,7 +40,7 @@ This runs all tests and packages the library.
 <a id="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -131,19 +131,6 @@ Class | Method | HTTP request | Description
 *OnramperApi* | [**onRamperGetSupportedOnRampsAll**](docs/OnramperApi.md#onrampergetsupportedonrampsall) | **GET** /onramper/onramps | 
 *OnramperApi* | [**onRamperGetSupportedPaymentTypes**](docs/OnramperApi.md#onrampergetsupportedpaymenttypes) | **GET** /onramper/payment-types | 
 *OnramperApi* | [**onRamperGetSupportedPaymentTypesFiat**](docs/OnramperApi.md#onrampergetsupportedpaymenttypesfiat) | **GET** /onramper/payment-types/fiat | 
-*PaymentApi* | [**createPaymentIntentConfig**](docs/PaymentApi.md#createpaymentintentconfig) | **POST** /payment/config | 
-*PaymentApi* | [**deletePaymentIntentConfig**](docs/PaymentApi.md#deletepaymentintentconfig) | **DELETE** /payment/config/{id} | 
-*PaymentApi* | [**getAllPaymentIntentConfigs**](docs/PaymentApi.md#getallpaymentintentconfigs) | **GET** /payment/config | 
-*PaymentApi* | [**getOnePaymentIntentConfigs**](docs/PaymentApi.md#getonepaymentintentconfigs) | **GET** /payment/config/{id} | 
-*PaymentApi* | [**moralisWebhook**](docs/PaymentApi.md#moraliswebhook) | **POST** /payment/webhook/{id} | 
-*PaymentApi* | [**paymentCreatePaymentIntent**](docs/PaymentApi.md#paymentcreatepaymentintent) | **POST** /payment | 
-*PaymentApi* | [**paymentDeletePaymentIntent**](docs/PaymentApi.md#paymentdeletepaymentintent) | **DELETE** /payment/{id} | 
-*PaymentApi* | [**paymentGetAllPaymentIntents**](docs/PaymentApi.md#paymentgetallpaymentintents) | **GET** /payment | 
-*PaymentApi* | [**paymentGetAvailableChains**](docs/PaymentApi.md#paymentgetavailablechains) | **GET** /payment/chains | 
-*PaymentApi* | [**paymentGetPaymentIntent**](docs/PaymentApi.md#paymentgetpaymentintent) | **GET** /payment/{id} | 
-*PaymentApi* | [**paymentUpdatePaymentIntent**](docs/PaymentApi.md#paymentupdatepaymentintent) | **PUT** /payment/{id} | 
-*PaymentApi* | [**tatumWebhook**](docs/PaymentApi.md#tatumwebhook) | **POST** /payment/webhook/tatum/{id} | 
-*PaymentApi* | [**updatePaymentIntentConfig**](docs/PaymentApi.md#updatepaymentintentconfig) | **PUT** /payment/config/{id} | 
 *RippleApi* | [**createRippleAccount**](docs/RippleApi.md#createrippleaccount) | **POST** /ripple | 
 *RippleApi* | [**getRippleAccount**](docs/RippleApi.md#getrippleaccount) | **GET** /ripple/{accountName} | 
 *RippleApi* | [**listRippleAccounts**](docs/RippleApi.md#listrippleaccounts) | **GET** /ripple | 
@@ -170,75 +157,75 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [org.usemoonai.moonsdk.models.AaveInput](docs/AaveInput.md)
+ - [org.usemoonai.moonsdk.models.AaveReservesAPIResponse](docs/AaveReservesAPIResponse.md)
  - [org.usemoonai.moonsdk.models.AaveReservesData](docs/AaveReservesData.md)
- - [org.usemoonai.moonsdk.models.AbiInput](docs/AbiInput.md)
- - [org.usemoonai.moonsdk.models.AbiItem](docs/AbiItem.md)
- - [org.usemoonai.moonsdk.models.AbiOutput](docs/AbiOutput.md)
- - [org.usemoonai.moonsdk.models.AccountControllerResponse](docs/AccountControllerResponse.md)
- - [org.usemoonai.moonsdk.models.AccountControllerResponseData](docs/AccountControllerResponseData.md)
+ - [org.usemoonai.moonsdk.models.AccountAPIResponse](docs/AccountAPIResponse.md)
+ - [org.usemoonai.moonsdk.models.AccountData](docs/AccountData.md)
  - [org.usemoonai.moonsdk.models.AccountResponse](docs/AccountResponse.md)
  - [org.usemoonai.moonsdk.models.AvailablePaymentMethod](docs/AvailablePaymentMethod.md)
+ - [org.usemoonai.moonsdk.models.BalanceAPIResponse](docs/BalanceAPIResponse.md)
  - [org.usemoonai.moonsdk.models.BalanceResponse](docs/BalanceResponse.md)
+ - [org.usemoonai.moonsdk.models.BitcoinAPIResponse](docs/BitcoinAPIResponse.md)
+ - [org.usemoonai.moonsdk.models.BitcoinCashAPIResponse](docs/BitcoinCashAPIResponse.md)
  - [org.usemoonai.moonsdk.models.BitcoinCashInput](docs/BitcoinCashInput.md)
  - [org.usemoonai.moonsdk.models.BitcoinCashTransactionInput](docs/BitcoinCashTransactionInput.md)
+ - [org.usemoonai.moonsdk.models.BitcoinCashTransactionOutput](docs/BitcoinCashTransactionOutput.md)
  - [org.usemoonai.moonsdk.models.BitcoinInput](docs/BitcoinInput.md)
  - [org.usemoonai.moonsdk.models.BitcoinTransactionInput](docs/BitcoinTransactionInput.md)
  - [org.usemoonai.moonsdk.models.BitcoinTransactionOutput](docs/BitcoinTransactionOutput.md)
- - [org.usemoonai.moonsdk.models.Block](docs/Block.md)
+ - [org.usemoonai.moonsdk.models.BroadCastRawTransactionAPIResponse](docs/BroadCastRawTransactionAPIResponse.md)
  - [org.usemoonai.moonsdk.models.BroadCastRawTransactionResponse](docs/BroadCastRawTransactionResponse.md)
  - [org.usemoonai.moonsdk.models.BroadcastInput](docs/BroadcastInput.md)
  - [org.usemoonai.moonsdk.models.ConveyorFinanceControllerResponse](docs/ConveyorFinanceControllerResponse.md)
+ - [org.usemoonai.moonsdk.models.CosmosAPIResponse](docs/CosmosAPIResponse.md)
  - [org.usemoonai.moonsdk.models.CosmosInput](docs/CosmosInput.md)
  - [org.usemoonai.moonsdk.models.CosmosTransactionInput](docs/CosmosTransactionInput.md)
+ - [org.usemoonai.moonsdk.models.CosmosTransactionOutput](docs/CosmosTransactionOutput.md)
  - [org.usemoonai.moonsdk.models.CreateAccountInput](docs/CreateAccountInput.md)
- - [org.usemoonai.moonsdk.models.CreatePaymentIntentInput](docs/CreatePaymentIntentInput.md)
  - [org.usemoonai.moonsdk.models.CryptoCurrency](docs/CryptoCurrency.md)
  - [org.usemoonai.moonsdk.models.DeployInput](docs/DeployInput.md)
+ - [org.usemoonai.moonsdk.models.DogeCoinAPIResponse](docs/DogeCoinAPIResponse.md)
  - [org.usemoonai.moonsdk.models.DogeCoinInput](docs/DogeCoinInput.md)
  - [org.usemoonai.moonsdk.models.DogeCoinTransactionInput](docs/DogeCoinTransactionInput.md)
- - [org.usemoonai.moonsdk.models.ENSReverseResolveResponse](docs/ENSReverseResolveResponse.md)
+ - [org.usemoonai.moonsdk.models.DogeCoinTransactionOutput](docs/DogeCoinTransactionOutput.md)
+ - [org.usemoonai.moonsdk.models.EnsResolveAPIResponse](docs/EnsResolveAPIResponse.md)
  - [org.usemoonai.moonsdk.models.EnsResolveInput](docs/EnsResolveInput.md)
  - [org.usemoonai.moonsdk.models.EnsResolveResponse](docs/EnsResolveResponse.md)
+ - [org.usemoonai.moonsdk.models.EosAPIResponse](docs/EosAPIResponse.md)
  - [org.usemoonai.moonsdk.models.EosInput](docs/EosInput.md)
  - [org.usemoonai.moonsdk.models.EosTransactionInput](docs/EosTransactionInput.md)
+ - [org.usemoonai.moonsdk.models.EosTransactionOutput](docs/EosTransactionOutput.md)
  - [org.usemoonai.moonsdk.models.Erc1155Request](docs/Erc1155Request.md)
- - [org.usemoonai.moonsdk.models.Erc1155Response](docs/Erc1155Response.md)
- - [org.usemoonai.moonsdk.models.Erc20Response](docs/Erc20Response.md)
  - [org.usemoonai.moonsdk.models.Erc721Request](docs/Erc721Request.md)
- - [org.usemoonai.moonsdk.models.Erc721Response](docs/Erc721Response.md)
  - [org.usemoonai.moonsdk.models.FiatCurrency](docs/FiatCurrency.md)
  - [org.usemoonai.moonsdk.models.GetSupportedOnRampsResponse](docs/GetSupportedOnRampsResponse.md)
  - [org.usemoonai.moonsdk.models.GetSupportedOnRampsResponseMessageInner](docs/GetSupportedOnRampsResponseMessageInner.md)
  - [org.usemoonai.moonsdk.models.GetSupportedOnRampsResponseMessageInnerIcons](docs/GetSupportedOnRampsResponseMessageInnerIcons.md)
  - [org.usemoonai.moonsdk.models.GetSupportedOnRampsResponseMessageInnerIconsPng](docs/GetSupportedOnRampsResponseMessageInnerIconsPng.md)
  - [org.usemoonai.moonsdk.models.GetSwapDto](docs/GetSwapDto.md)
- - [org.usemoonai.moonsdk.models.IERC20Approval](docs/IERC20Approval.md)
- - [org.usemoonai.moonsdk.models.IERC20Transfer](docs/IERC20Transfer.md)
- - [org.usemoonai.moonsdk.models.INFTApproval](docs/INFTApproval.md)
- - [org.usemoonai.moonsdk.models.INFTApprovalERC1155](docs/INFTApprovalERC1155.md)
- - [org.usemoonai.moonsdk.models.INFTApprovalERC721](docs/INFTApprovalERC721.md)
- - [org.usemoonai.moonsdk.models.INFTTransfer](docs/INFTTransfer.md)
- - [org.usemoonai.moonsdk.models.INativeBalance](docs/INativeBalance.md)
- - [org.usemoonai.moonsdk.models.IOldNFTApproval](docs/IOldNFTApproval.md)
- - [org.usemoonai.moonsdk.models.IWebhook](docs/IWebhook.md)
  - [org.usemoonai.moonsdk.models.InputBody](docs/InputBody.md)
- - [org.usemoonai.moonsdk.models.InternalTransaction](docs/InternalTransaction.md)
+ - [org.usemoonai.moonsdk.models.LitecoinAPIResponse](docs/LitecoinAPIResponse.md)
  - [org.usemoonai.moonsdk.models.LitecoinInput](docs/LitecoinInput.md)
  - [org.usemoonai.moonsdk.models.LitecoinTransactionInput](docs/LitecoinTransactionInput.md)
- - [org.usemoonai.moonsdk.models.Log](docs/Log.md)
+ - [org.usemoonai.moonsdk.models.LitecoinTransactionOutput](docs/LitecoinTransactionOutput.md)
  - [org.usemoonai.moonsdk.models.Message](docs/Message.md)
+ - [org.usemoonai.moonsdk.models.NonceAPIResponse](docs/NonceAPIResponse.md)
  - [org.usemoonai.moonsdk.models.NonceResponse](docs/NonceResponse.md)
- - [org.usemoonai.moonsdk.models.PaymentIntentResponse](docs/PaymentIntentResponse.md)
  - [org.usemoonai.moonsdk.models.PaymentType](docs/PaymentType.md)
  - [org.usemoonai.moonsdk.models.PingResponse](docs/PingResponse.md)
  - [org.usemoonai.moonsdk.models.Quote](docs/Quote.md)
+ - [org.usemoonai.moonsdk.models.RippleAPIResponse](docs/RippleAPIResponse.md)
  - [org.usemoonai.moonsdk.models.RippleInput](docs/RippleInput.md)
  - [org.usemoonai.moonsdk.models.RippleTransactionInput](docs/RippleTransactionInput.md)
+ - [org.usemoonai.moonsdk.models.RippleTransactionOutput](docs/RippleTransactionOutput.md)
  - [org.usemoonai.moonsdk.models.SellQuote](docs/SellQuote.md)
  - [org.usemoonai.moonsdk.models.SignMessage](docs/SignMessage.md)
+ - [org.usemoonai.moonsdk.models.SignMessageAPIResponse](docs/SignMessageAPIResponse.md)
  - [org.usemoonai.moonsdk.models.SignTypedData](docs/SignTypedData.md)
+ - [org.usemoonai.moonsdk.models.SolanaAPIResponse](docs/SolanaAPIResponse.md)
  - [org.usemoonai.moonsdk.models.SolanaInput](docs/SolanaInput.md)
  - [org.usemoonai.moonsdk.models.SolanaTransactionInput](docs/SolanaTransactionInput.md)
+ - [org.usemoonai.moonsdk.models.SolanaTransactionOutput](docs/SolanaTransactionOutput.md)
  - [org.usemoonai.moonsdk.models.SupportedAssetResponse](docs/SupportedAssetResponse.md)
  - [org.usemoonai.moonsdk.models.SupportedAssetResponseAssetsInner](docs/SupportedAssetResponseAssetsInner.md)
  - [org.usemoonai.moonsdk.models.SupportedCurrenciesResponse](docs/SupportedCurrenciesResponse.md)
@@ -247,9 +234,9 @@ Class | Method | HTTP request | Description
  - [org.usemoonai.moonsdk.models.SupportedDefaultResponseDefaultsId](docs/SupportedDefaultResponseDefaultsId.md)
  - [org.usemoonai.moonsdk.models.SupportedPaymentTypesCurrencyResponse](docs/SupportedPaymentTypesCurrencyResponse.md)
  - [org.usemoonai.moonsdk.models.SupportedPaymentTypesMessage](docs/SupportedPaymentTypesMessage.md)
- - [org.usemoonai.moonsdk.models.TatumTransactionEvent](docs/TatumTransactionEvent.md)
  - [org.usemoonai.moonsdk.models.TokenSwapParams](docs/TokenSwapParams.md)
  - [org.usemoonai.moonsdk.models.Transaction](docs/Transaction.md)
+ - [org.usemoonai.moonsdk.models.TransactionAPIResponse](docs/TransactionAPIResponse.md)
  - [org.usemoonai.moonsdk.models.TransactionData](docs/TransactionData.md)
  - [org.usemoonai.moonsdk.models.TransactionInput](docs/TransactionInput.md)
  - [org.usemoonai.moonsdk.models.TransactionInputMetaData](docs/TransactionInputMetaData.md)
@@ -262,9 +249,10 @@ Class | Method | HTTP request | Description
  - [org.usemoonai.moonsdk.models.TransactionResponse](docs/TransactionResponse.md)
  - [org.usemoonai.moonsdk.models.TransactionResponseInfo](docs/TransactionResponseInfo.md)
  - [org.usemoonai.moonsdk.models.TransactionResponseTx](docs/TransactionResponseTx.md)
- - [org.usemoonai.moonsdk.models.TriggerOutput](docs/TriggerOutput.md)
+ - [org.usemoonai.moonsdk.models.TronAPIResponse](docs/TronAPIResponse.md)
  - [org.usemoonai.moonsdk.models.TronInput](docs/TronInput.md)
  - [org.usemoonai.moonsdk.models.TronTransactionInput](docs/TronTransactionInput.md)
+ - [org.usemoonai.moonsdk.models.TronTransactionOutput](docs/TronTransactionOutput.md)
  - [org.usemoonai.moonsdk.models.Tx](docs/Tx.md)
  - [org.usemoonai.moonsdk.models.UniswapInput](docs/UniswapInput.md)
 

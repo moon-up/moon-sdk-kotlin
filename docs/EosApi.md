@@ -1,6 +1,6 @@
 # EosApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a id="createEosAccount"></a>
 # **createEosAccount**
-> AccountControllerResponse createEosAccount(authorization, eosInput)
+> AccountAPIResponse createEosAccount(authorization, eosInput)
 
 
 
@@ -26,7 +26,7 @@ val apiInstance = EosApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val eosInput : EosInput =  // EosInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.createEosAccount(authorization, eosInput)
+    val result : AccountAPIResponse = apiInstance.createEosAccount(authorization, eosInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling EosApi#createEosAccount")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Configure BearerAuth:
 
 <a id="getEosAccount"></a>
 # **getEosAccount**
-> AccountControllerResponse getEosAccount(authorization, accountName)
+> AccountAPIResponse getEosAccount(authorization, accountName)
 
 
 
@@ -79,7 +79,7 @@ val apiInstance = EosApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.getEosAccount(authorization, accountName)
+    val result : AccountAPIResponse = apiInstance.getEosAccount(authorization, accountName)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling EosApi#getEosAccount")
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Configure BearerAuth:
 
 <a id="listEosAccounts"></a>
 # **listEosAccounts**
-> AccountControllerResponse listEosAccounts(authorization)
+> AccountAPIResponse listEosAccounts(authorization)
 
 
 
@@ -131,7 +131,7 @@ Configure BearerAuth:
 val apiInstance = EosApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.listEosAccounts(authorization)
+    val result : AccountAPIResponse = apiInstance.listEosAccounts(authorization)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling EosApi#listEosAccounts")
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Configure BearerAuth:
 
 <a id="signEosTransaction"></a>
 # **signEosTransaction**
-> AccountControllerResponse signEosTransaction(authorization, accountName, eosTransactionInput)
+> EosAPIResponse signEosTransaction(authorization, accountName, eosTransactionInput)
 
 
 
@@ -184,7 +184,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val eosTransactionInput : EosTransactionInput =  // EosTransactionInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.signEosTransaction(authorization, accountName, eosTransactionInput)
+    val result : EosAPIResponse = apiInstance.signEosTransaction(authorization, accountName, eosTransactionInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling EosApi#signEosTransaction")
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**EosAPIResponse**](EosAPIResponse.md)
 
 ### Authorization
 

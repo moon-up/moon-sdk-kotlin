@@ -19,8 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
 import org.usemoonai.moonsdk.models.Erc1155Request
+import org.usemoonai.moonsdk.models.TransactionAPIResponse
 
 import com.squareup.moshi.Json
 
@@ -42,7 +42,7 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -52,7 +52,7 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param name 
      * @param authorization 
      * @param erc1155Request 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +61,11 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun balanceOf(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : AccountControllerResponse {
+    fun balanceOf(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : TransactionAPIResponse {
         val localVarResponse = balanceOfWithHttpInfo(name = name, authorization = authorization, erc1155Request = erc1155Request)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -85,16 +85,16 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param name 
      * @param authorization 
      * @param erc1155Request 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun balanceOfWithHttpInfo(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : ApiResponse<AccountControllerResponse?> {
+    fun balanceOfWithHttpInfo(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = balanceOfRequestConfig(name = name, authorization = authorization, erc1155Request = erc1155Request)
 
-        return request<Erc1155Request, AccountControllerResponse>(
+        return request<Erc1155Request, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -131,7 +131,7 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param name 
      * @param authorization 
      * @param erc1155Request 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -140,11 +140,11 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun balanceOfBatch(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : AccountControllerResponse {
+    fun balanceOfBatch(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : TransactionAPIResponse {
         val localVarResponse = balanceOfBatchWithHttpInfo(name = name, authorization = authorization, erc1155Request = erc1155Request)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -164,16 +164,16 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param name 
      * @param authorization 
      * @param erc1155Request 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun balanceOfBatchWithHttpInfo(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : ApiResponse<AccountControllerResponse?> {
+    fun balanceOfBatchWithHttpInfo(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = balanceOfBatchRequestConfig(name = name, authorization = authorization, erc1155Request = erc1155Request)
 
-        return request<Erc1155Request, AccountControllerResponse>(
+        return request<Erc1155Request, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -210,7 +210,7 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param name 
      * @param authorization 
      * @param erc1155Request 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -219,11 +219,11 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun isApprovedForAll(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : AccountControllerResponse {
+    fun isApprovedForAll(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : TransactionAPIResponse {
         val localVarResponse = isApprovedForAllWithHttpInfo(name = name, authorization = authorization, erc1155Request = erc1155Request)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -243,16 +243,16 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param name 
      * @param authorization 
      * @param erc1155Request 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun isApprovedForAllWithHttpInfo(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : ApiResponse<AccountControllerResponse?> {
+    fun isApprovedForAllWithHttpInfo(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = isApprovedForAllRequestConfig(name = name, authorization = authorization, erc1155Request = erc1155Request)
 
-        return request<Erc1155Request, AccountControllerResponse>(
+        return request<Erc1155Request, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -289,7 +289,7 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param name 
      * @param authorization 
      * @param erc1155Request 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -298,11 +298,11 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun safeBatchTransferFrom(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : AccountControllerResponse {
+    fun safeBatchTransferFrom(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : TransactionAPIResponse {
         val localVarResponse = safeBatchTransferFromWithHttpInfo(name = name, authorization = authorization, erc1155Request = erc1155Request)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -322,16 +322,16 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param name 
      * @param authorization 
      * @param erc1155Request 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun safeBatchTransferFromWithHttpInfo(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : ApiResponse<AccountControllerResponse?> {
+    fun safeBatchTransferFromWithHttpInfo(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = safeBatchTransferFromRequestConfig(name = name, authorization = authorization, erc1155Request = erc1155Request)
 
-        return request<Erc1155Request, AccountControllerResponse>(
+        return request<Erc1155Request, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -368,7 +368,7 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param name 
      * @param authorization 
      * @param erc1155Request 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -377,11 +377,11 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun safeTransferFrom(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : AccountControllerResponse {
+    fun safeTransferFrom(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : TransactionAPIResponse {
         val localVarResponse = safeTransferFromWithHttpInfo(name = name, authorization = authorization, erc1155Request = erc1155Request)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -401,16 +401,16 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param name 
      * @param authorization 
      * @param erc1155Request 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun safeTransferFromWithHttpInfo(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : ApiResponse<AccountControllerResponse?> {
+    fun safeTransferFromWithHttpInfo(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = safeTransferFromRequestConfig(name = name, authorization = authorization, erc1155Request = erc1155Request)
 
-        return request<Erc1155Request, AccountControllerResponse>(
+        return request<Erc1155Request, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -447,7 +447,7 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param name 
      * @param authorization 
      * @param erc1155Request 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -456,11 +456,11 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun setApprovalForAll(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : AccountControllerResponse {
+    fun setApprovalForAll(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : TransactionAPIResponse {
         val localVarResponse = setApprovalForAllWithHttpInfo(name = name, authorization = authorization, erc1155Request = erc1155Request)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -480,16 +480,16 @@ class ERC1155Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param name 
      * @param authorization 
      * @param erc1155Request 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun setApprovalForAllWithHttpInfo(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : ApiResponse<AccountControllerResponse?> {
+    fun setApprovalForAllWithHttpInfo(name: kotlin.String, authorization: kotlin.String, erc1155Request: Erc1155Request) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = setApprovalForAllRequestConfig(name = name, authorization = authorization, erc1155Request = erc1155Request)
 
-        return request<Erc1155Request, AccountControllerResponse>(
+        return request<Erc1155Request, TransactionAPIResponse>(
             localVariableConfig
         )
     }

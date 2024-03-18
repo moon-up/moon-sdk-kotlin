@@ -1,6 +1,6 @@
 # AaveApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a id="borrow"></a>
 # **borrow**
-> AccountControllerResponse borrow(authorization, name, aaveInput)
+> TransactionAPIResponse borrow(authorization, name, aaveInput)
 
 
 
@@ -27,7 +27,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val aaveInput : AaveInput =  // AaveInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.borrow(authorization, name, aaveInput)
+    val result : TransactionAPIResponse = apiInstance.borrow(authorization, name, aaveInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AaveApi#borrow")
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Configure BearerAuth:
 
 <a id="lend"></a>
 # **lend**
-> AccountControllerResponse lend(authorization, name, aaveInput)
+> TransactionAPIResponse lend(authorization, name, aaveInput)
 
 
 
@@ -82,7 +82,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val aaveInput : AaveInput =  // AaveInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.lend(authorization, name, aaveInput)
+    val result : TransactionAPIResponse = apiInstance.lend(authorization, name, aaveInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AaveApi#lend")
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ Configure BearerAuth:
 
 <a id="repay"></a>
 # **repay**
-> AccountControllerResponse repay(authorization, name, aaveInput)
+> TransactionAPIResponse repay(authorization, name, aaveInput)
 
 
 
@@ -137,7 +137,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val aaveInput : AaveInput =  // AaveInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.repay(authorization, name, aaveInput)
+    val result : TransactionAPIResponse = apiInstance.repay(authorization, name, aaveInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AaveApi#repay")
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ Configure BearerAuth:
 
 <a id="userReserveData"></a>
 # **userReserveData**
-> AccountControllerResponse userReserveData(authorization, name, aaveInput)
+> AaveReservesAPIResponse userReserveData(authorization, name, aaveInput)
 
 
 
@@ -192,7 +192,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val aaveInput : AaveInput =  // AaveInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.userReserveData(authorization, name, aaveInput)
+    val result : AaveReservesAPIResponse = apiInstance.userReserveData(authorization, name, aaveInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AaveApi#userReserveData")
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AaveReservesAPIResponse**](AaveReservesAPIResponse.md)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 # UniSwapApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a id="addLiquidity"></a>
 # **addLiquidity**
-> AccountControllerResponse addLiquidity(authorization, name, uniswapInput)
+> TransactionAPIResponse addLiquidity(authorization, name, uniswapInput)
 
 
 
@@ -27,7 +27,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val uniswapInput : UniswapInput =  // UniswapInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.addLiquidity(authorization, name, uniswapInput)
+    val result : TransactionAPIResponse = apiInstance.addLiquidity(authorization, name, uniswapInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling UniSwapApi#addLiquidity")
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Configure BearerAuth:
 
 <a id="removeLiquidity"></a>
 # **removeLiquidity**
-> AccountControllerResponse removeLiquidity(authorization, name, uniswapInput)
+> TransactionAPIResponse removeLiquidity(authorization, name, uniswapInput)
 
 
 
@@ -82,7 +82,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val uniswapInput : UniswapInput =  // UniswapInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.removeLiquidity(authorization, name, uniswapInput)
+    val result : TransactionAPIResponse = apiInstance.removeLiquidity(authorization, name, uniswapInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling UniSwapApi#removeLiquidity")
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ Configure BearerAuth:
 
 <a id="swapExactETHForTokens"></a>
 # **swapExactETHForTokens**
-> AccountControllerResponse swapExactETHForTokens(authorization, name, uniswapInput)
+> TransactionAPIResponse swapExactETHForTokens(authorization, name, uniswapInput)
 
 
 
@@ -137,7 +137,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val uniswapInput : UniswapInput =  // UniswapInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.swapExactETHForTokens(authorization, name, uniswapInput)
+    val result : TransactionAPIResponse = apiInstance.swapExactETHForTokens(authorization, name, uniswapInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling UniSwapApi#swapExactETHForTokens")
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ Configure BearerAuth:
 
 <a id="swapExactTokensForTokens"></a>
 # **swapExactTokensForTokens**
-> AccountControllerResponse swapExactTokensForTokens(authorization, name, uniswapInput)
+> TransactionAPIResponse swapExactTokensForTokens(authorization, name, uniswapInput)
 
 
 
@@ -192,7 +192,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val uniswapInput : UniswapInput =  // UniswapInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.swapExactTokensForTokens(authorization, name, uniswapInput)
+    val result : TransactionAPIResponse = apiInstance.swapExactTokensForTokens(authorization, name, uniswapInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling UniSwapApi#swapExactTokensForTokens")
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 

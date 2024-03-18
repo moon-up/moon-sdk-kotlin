@@ -1,6 +1,6 @@
 # CosmosApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a id="createCosmosAccount"></a>
 # **createCosmosAccount**
-> AccountControllerResponse createCosmosAccount(authorization, cosmosInput)
+> AccountAPIResponse createCosmosAccount(authorization, cosmosInput)
 
 
 
@@ -26,7 +26,7 @@ val apiInstance = CosmosApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val cosmosInput : CosmosInput =  // CosmosInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.createCosmosAccount(authorization, cosmosInput)
+    val result : AccountAPIResponse = apiInstance.createCosmosAccount(authorization, cosmosInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CosmosApi#createCosmosAccount")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Configure BearerAuth:
 
 <a id="getCosmosAccount"></a>
 # **getCosmosAccount**
-> AccountControllerResponse getCosmosAccount(authorization, accountName)
+> AccountAPIResponse getCosmosAccount(authorization, accountName)
 
 
 
@@ -79,7 +79,7 @@ val apiInstance = CosmosApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.getCosmosAccount(authorization, accountName)
+    val result : AccountAPIResponse = apiInstance.getCosmosAccount(authorization, accountName)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CosmosApi#getCosmosAccount")
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Configure BearerAuth:
 
 <a id="listCosmosAccounts"></a>
 # **listCosmosAccounts**
-> AccountControllerResponse listCosmosAccounts(authorization)
+> AccountAPIResponse listCosmosAccounts(authorization)
 
 
 
@@ -131,7 +131,7 @@ Configure BearerAuth:
 val apiInstance = CosmosApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.listCosmosAccounts(authorization)
+    val result : AccountAPIResponse = apiInstance.listCosmosAccounts(authorization)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CosmosApi#listCosmosAccounts")
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Configure BearerAuth:
 
 <a id="signCosmosTransaction"></a>
 # **signCosmosTransaction**
-> AccountControllerResponse signCosmosTransaction(authorization, accountName, cosmosTransactionInput)
+> CosmosAPIResponse signCosmosTransaction(authorization, accountName, cosmosTransactionInput)
 
 
 
@@ -184,7 +184,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val cosmosTransactionInput : CosmosTransactionInput =  // CosmosTransactionInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.signCosmosTransaction(authorization, accountName, cosmosTransactionInput)
+    val result : CosmosAPIResponse = apiInstance.signCosmosTransaction(authorization, accountName, cosmosTransactionInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CosmosApi#signCosmosTransaction")
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**CosmosAPIResponse**](CosmosAPIResponse.md)
 
 ### Authorization
 

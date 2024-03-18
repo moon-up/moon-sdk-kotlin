@@ -42,7 +42,7 @@ class ConveyorFinanceApi(basePath: kotlin.String = defaultBasePath, client: OkHt
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 

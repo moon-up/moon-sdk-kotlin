@@ -1,6 +1,6 @@
 # LitecoinApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a id="createLitecoinAccount"></a>
 # **createLitecoinAccount**
-> AccountControllerResponse createLitecoinAccount(authorization, litecoinInput)
+> AccountAPIResponse createLitecoinAccount(authorization, litecoinInput)
 
 
 
@@ -26,7 +26,7 @@ val apiInstance = LitecoinApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val litecoinInput : LitecoinInput =  // LitecoinInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.createLitecoinAccount(authorization, litecoinInput)
+    val result : AccountAPIResponse = apiInstance.createLitecoinAccount(authorization, litecoinInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling LitecoinApi#createLitecoinAccount")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Configure BearerAuth:
 
 <a id="getLitecoinAccount"></a>
 # **getLitecoinAccount**
-> AccountControllerResponse getLitecoinAccount(authorization, accountName)
+> AccountAPIResponse getLitecoinAccount(authorization, accountName)
 
 
 
@@ -79,7 +79,7 @@ val apiInstance = LitecoinApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.getLitecoinAccount(authorization, accountName)
+    val result : AccountAPIResponse = apiInstance.getLitecoinAccount(authorization, accountName)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling LitecoinApi#getLitecoinAccount")
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Configure BearerAuth:
 
 <a id="listLitecoinAccounts"></a>
 # **listLitecoinAccounts**
-> AccountControllerResponse listLitecoinAccounts(authorization)
+> AccountAPIResponse listLitecoinAccounts(authorization)
 
 
 
@@ -131,7 +131,7 @@ Configure BearerAuth:
 val apiInstance = LitecoinApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.listLitecoinAccounts(authorization)
+    val result : AccountAPIResponse = apiInstance.listLitecoinAccounts(authorization)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling LitecoinApi#listLitecoinAccounts")
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Configure BearerAuth:
 
 <a id="signLitecoinTransaction"></a>
 # **signLitecoinTransaction**
-> AccountControllerResponse signLitecoinTransaction(authorization, accountName, litecoinTransactionInput)
+> LitecoinAPIResponse signLitecoinTransaction(authorization, accountName, litecoinTransactionInput)
 
 
 
@@ -184,7 +184,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val litecoinTransactionInput : LitecoinTransactionInput =  // LitecoinTransactionInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.signLitecoinTransaction(authorization, accountName, litecoinTransactionInput)
+    val result : LitecoinAPIResponse = apiInstance.signLitecoinTransaction(authorization, accountName, litecoinTransactionInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling LitecoinApi#signLitecoinTransaction")
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**LitecoinAPIResponse**](LitecoinAPIResponse.md)
 
 ### Authorization
 

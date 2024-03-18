@@ -1,6 +1,6 @@
 # ENSApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a id="resolve"></a>
 # **resolve**
-> AccountControllerResponse resolve(authorization, ensResolveInput)
+> EnsResolveAPIResponse resolve(authorization, ensResolveInput)
 
 
 
@@ -23,7 +23,7 @@ val apiInstance = ENSApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val ensResolveInput : EnsResolveInput =  // EnsResolveInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.resolve(authorization, ensResolveInput)
+    val result : EnsResolveAPIResponse = apiInstance.resolve(authorization, ensResolveInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ENSApi#resolve")
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**EnsResolveAPIResponse**](EnsResolveAPIResponse.md)
 
 ### Authorization
 

@@ -19,7 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
+import org.usemoonai.moonsdk.models.AccountAPIResponse
+import org.usemoonai.moonsdk.models.BitcoinAPIResponse
 import org.usemoonai.moonsdk.models.BitcoinInput
 import org.usemoonai.moonsdk.models.BitcoinTransactionInput
 
@@ -43,7 +44,7 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -52,7 +53,7 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * 
      * @param authorization 
      * @param bitcoinInput 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +62,11 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createBitcoinAccount(authorization: kotlin.String, bitcoinInput: BitcoinInput) : AccountControllerResponse {
+    fun createBitcoinAccount(authorization: kotlin.String, bitcoinInput: BitcoinInput) : AccountAPIResponse {
         val localVarResponse = createBitcoinAccountWithHttpInfo(authorization = authorization, bitcoinInput = bitcoinInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -84,16 +85,16 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * 
      * @param authorization 
      * @param bitcoinInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createBitcoinAccountWithHttpInfo(authorization: kotlin.String, bitcoinInput: BitcoinInput) : ApiResponse<AccountControllerResponse?> {
+    fun createBitcoinAccountWithHttpInfo(authorization: kotlin.String, bitcoinInput: BitcoinInput) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = createBitcoinAccountRequestConfig(authorization = authorization, bitcoinInput = bitcoinInput)
 
-        return request<BitcoinInput, AccountControllerResponse>(
+        return request<BitcoinInput, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -128,7 +129,7 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * 
      * @param authorization 
      * @param accountName 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -137,11 +138,11 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getBitcoinAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountControllerResponse {
+    fun getBitcoinAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountAPIResponse {
         val localVarResponse = getBitcoinAccountWithHttpInfo(authorization = authorization, accountName = accountName)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -160,16 +161,16 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * 
      * @param authorization 
      * @param accountName 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getBitcoinAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun getBitcoinAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = getBitcoinAccountRequestConfig(authorization = authorization, accountName = accountName)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -202,7 +203,7 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * 
      * 
      * @param authorization 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -211,11 +212,11 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun listBitcoinAccounts(authorization: kotlin.String) : AccountControllerResponse {
+    fun listBitcoinAccounts(authorization: kotlin.String) : AccountAPIResponse {
         val localVarResponse = listBitcoinAccountsWithHttpInfo(authorization = authorization)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -233,16 +234,16 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * 
      * 
      * @param authorization 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun listBitcoinAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun listBitcoinAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = listBitcoinAccountsRequestConfig(authorization = authorization)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -276,7 +277,7 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param authorization 
      * @param accountName 
      * @param bitcoinTransactionInput 
-     * @return AccountControllerResponse
+     * @return BitcoinAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -285,11 +286,11 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun signBitcoinTransaction(authorization: kotlin.String, accountName: kotlin.String, bitcoinTransactionInput: BitcoinTransactionInput) : AccountControllerResponse {
+    fun signBitcoinTransaction(authorization: kotlin.String, accountName: kotlin.String, bitcoinTransactionInput: BitcoinTransactionInput) : BitcoinAPIResponse {
         val localVarResponse = signBitcoinTransactionWithHttpInfo(authorization = authorization, accountName = accountName, bitcoinTransactionInput = bitcoinTransactionInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as BitcoinAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -309,16 +310,16 @@ class BitcoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param authorization 
      * @param accountName 
      * @param bitcoinTransactionInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<BitcoinAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun signBitcoinTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, bitcoinTransactionInput: BitcoinTransactionInput) : ApiResponse<AccountControllerResponse?> {
+    fun signBitcoinTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, bitcoinTransactionInput: BitcoinTransactionInput) : ApiResponse<BitcoinAPIResponse?> {
         val localVariableConfig = signBitcoinTransactionRequestConfig(authorization = authorization, accountName = accountName, bitcoinTransactionInput = bitcoinTransactionInput)
 
-        return request<BitcoinTransactionInput, AccountControllerResponse>(
+        return request<BitcoinTransactionInput, BitcoinAPIResponse>(
             localVariableConfig
         )
     }

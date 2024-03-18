@@ -19,7 +19,7 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
+import org.usemoonai.moonsdk.models.EnsResolveAPIResponse
 import org.usemoonai.moonsdk.models.EnsResolveInput
 
 import com.squareup.moshi.Json
@@ -42,7 +42,7 @@ class ENSApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -51,7 +51,7 @@ class ENSApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      * 
      * @param authorization 
      * @param ensResolveInput 
-     * @return AccountControllerResponse
+     * @return EnsResolveAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -60,11 +60,11 @@ class ENSApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun resolve(authorization: kotlin.String, ensResolveInput: EnsResolveInput) : AccountControllerResponse {
+    fun resolve(authorization: kotlin.String, ensResolveInput: EnsResolveInput) : EnsResolveAPIResponse {
         val localVarResponse = resolveWithHttpInfo(authorization = authorization, ensResolveInput = ensResolveInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as EnsResolveAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -83,16 +83,16 @@ class ENSApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      * 
      * @param authorization 
      * @param ensResolveInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<EnsResolveAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun resolveWithHttpInfo(authorization: kotlin.String, ensResolveInput: EnsResolveInput) : ApiResponse<AccountControllerResponse?> {
+    fun resolveWithHttpInfo(authorization: kotlin.String, ensResolveInput: EnsResolveInput) : ApiResponse<EnsResolveAPIResponse?> {
         val localVariableConfig = resolveRequestConfig(authorization = authorization, ensResolveInput = ensResolveInput)
 
-        return request<EnsResolveInput, AccountControllerResponse>(
+        return request<EnsResolveInput, EnsResolveAPIResponse>(
             localVariableConfig
         )
     }

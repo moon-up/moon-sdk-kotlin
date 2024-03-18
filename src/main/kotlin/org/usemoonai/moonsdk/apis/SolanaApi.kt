@@ -19,7 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
+import org.usemoonai.moonsdk.models.AccountAPIResponse
+import org.usemoonai.moonsdk.models.SolanaAPIResponse
 import org.usemoonai.moonsdk.models.SolanaInput
 import org.usemoonai.moonsdk.models.SolanaTransactionInput
 
@@ -43,7 +44,7 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -52,7 +53,7 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * @param authorization 
      * @param solanaInput 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +62,11 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createSolanaAccount(authorization: kotlin.String, solanaInput: SolanaInput) : AccountControllerResponse {
+    fun createSolanaAccount(authorization: kotlin.String, solanaInput: SolanaInput) : AccountAPIResponse {
         val localVarResponse = createSolanaAccountWithHttpInfo(authorization = authorization, solanaInput = solanaInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -84,16 +85,16 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * @param authorization 
      * @param solanaInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createSolanaAccountWithHttpInfo(authorization: kotlin.String, solanaInput: SolanaInput) : ApiResponse<AccountControllerResponse?> {
+    fun createSolanaAccountWithHttpInfo(authorization: kotlin.String, solanaInput: SolanaInput) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = createSolanaAccountRequestConfig(authorization = authorization, solanaInput = solanaInput)
 
-        return request<SolanaInput, AccountControllerResponse>(
+        return request<SolanaInput, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -128,7 +129,7 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * @param authorization 
      * @param accountName 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -137,11 +138,11 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getSolanaAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountControllerResponse {
+    fun getSolanaAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountAPIResponse {
         val localVarResponse = getSolanaAccountWithHttpInfo(authorization = authorization, accountName = accountName)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -160,16 +161,16 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * @param authorization 
      * @param accountName 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getSolanaAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun getSolanaAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = getSolanaAccountRequestConfig(authorization = authorization, accountName = accountName)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -202,7 +203,7 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * 
      * @param authorization 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -211,11 +212,11 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun listSolanaAccounts(authorization: kotlin.String) : AccountControllerResponse {
+    fun listSolanaAccounts(authorization: kotlin.String) : AccountAPIResponse {
         val localVarResponse = listSolanaAccountsWithHttpInfo(authorization = authorization)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -233,16 +234,16 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * 
      * @param authorization 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun listSolanaAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun listSolanaAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = listSolanaAccountsRequestConfig(authorization = authorization)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -276,7 +277,7 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * @param authorization 
      * @param accountName 
      * @param solanaTransactionInput 
-     * @return AccountControllerResponse
+     * @return SolanaAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -285,11 +286,11 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun signSolanaTransaction(authorization: kotlin.String, accountName: kotlin.String, solanaTransactionInput: SolanaTransactionInput) : AccountControllerResponse {
+    fun signSolanaTransaction(authorization: kotlin.String, accountName: kotlin.String, solanaTransactionInput: SolanaTransactionInput) : SolanaAPIResponse {
         val localVarResponse = signSolanaTransactionWithHttpInfo(authorization = authorization, accountName = accountName, solanaTransactionInput = solanaTransactionInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SolanaAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -309,16 +310,16 @@ class SolanaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * @param authorization 
      * @param accountName 
      * @param solanaTransactionInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<SolanaAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun signSolanaTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, solanaTransactionInput: SolanaTransactionInput) : ApiResponse<AccountControllerResponse?> {
+    fun signSolanaTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, solanaTransactionInput: SolanaTransactionInput) : ApiResponse<SolanaAPIResponse?> {
         val localVariableConfig = signSolanaTransactionRequestConfig(authorization = authorization, accountName = accountName, solanaTransactionInput = solanaTransactionInput)
 
-        return request<SolanaTransactionInput, AccountControllerResponse>(
+        return request<SolanaTransactionInput, SolanaAPIResponse>(
             localVariableConfig
         )
     }

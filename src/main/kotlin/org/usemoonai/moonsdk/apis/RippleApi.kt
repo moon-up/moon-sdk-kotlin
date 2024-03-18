@@ -19,7 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
+import org.usemoonai.moonsdk.models.AccountAPIResponse
+import org.usemoonai.moonsdk.models.RippleAPIResponse
 import org.usemoonai.moonsdk.models.RippleInput
 import org.usemoonai.moonsdk.models.RippleTransactionInput
 
@@ -43,7 +44,7 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -52,7 +53,7 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * @param authorization 
      * @param rippleInput 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +62,11 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createRippleAccount(authorization: kotlin.String, rippleInput: RippleInput) : AccountControllerResponse {
+    fun createRippleAccount(authorization: kotlin.String, rippleInput: RippleInput) : AccountAPIResponse {
         val localVarResponse = createRippleAccountWithHttpInfo(authorization = authorization, rippleInput = rippleInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -84,16 +85,16 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * @param authorization 
      * @param rippleInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createRippleAccountWithHttpInfo(authorization: kotlin.String, rippleInput: RippleInput) : ApiResponse<AccountControllerResponse?> {
+    fun createRippleAccountWithHttpInfo(authorization: kotlin.String, rippleInput: RippleInput) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = createRippleAccountRequestConfig(authorization = authorization, rippleInput = rippleInput)
 
-        return request<RippleInput, AccountControllerResponse>(
+        return request<RippleInput, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -128,7 +129,7 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * @param authorization 
      * @param accountName 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -137,11 +138,11 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getRippleAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountControllerResponse {
+    fun getRippleAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountAPIResponse {
         val localVarResponse = getRippleAccountWithHttpInfo(authorization = authorization, accountName = accountName)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -160,16 +161,16 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * @param authorization 
      * @param accountName 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getRippleAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun getRippleAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = getRippleAccountRequestConfig(authorization = authorization, accountName = accountName)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -202,7 +203,7 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * 
      * @param authorization 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -211,11 +212,11 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun listRippleAccounts(authorization: kotlin.String) : AccountControllerResponse {
+    fun listRippleAccounts(authorization: kotlin.String) : AccountAPIResponse {
         val localVarResponse = listRippleAccountsWithHttpInfo(authorization = authorization)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -233,16 +234,16 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * 
      * @param authorization 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun listRippleAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun listRippleAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = listRippleAccountsRequestConfig(authorization = authorization)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -276,7 +277,7 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * @param authorization 
      * @param accountName 
      * @param rippleTransactionInput 
-     * @return AccountControllerResponse
+     * @return RippleAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -285,11 +286,11 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun signRippleTransaction(authorization: kotlin.String, accountName: kotlin.String, rippleTransactionInput: RippleTransactionInput) : AccountControllerResponse {
+    fun signRippleTransaction(authorization: kotlin.String, accountName: kotlin.String, rippleTransactionInput: RippleTransactionInput) : RippleAPIResponse {
         val localVarResponse = signRippleTransactionWithHttpInfo(authorization = authorization, accountName = accountName, rippleTransactionInput = rippleTransactionInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RippleAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -309,16 +310,16 @@ class RippleApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * @param authorization 
      * @param accountName 
      * @param rippleTransactionInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<RippleAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun signRippleTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, rippleTransactionInput: RippleTransactionInput) : ApiResponse<AccountControllerResponse?> {
+    fun signRippleTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, rippleTransactionInput: RippleTransactionInput) : ApiResponse<RippleAPIResponse?> {
         val localVariableConfig = signRippleTransactionRequestConfig(authorization = authorization, accountName = accountName, rippleTransactionInput = rippleTransactionInput)
 
-        return request<RippleTransactionInput, AccountControllerResponse>(
+        return request<RippleTransactionInput, RippleAPIResponse>(
             localVariableConfig
         )
     }

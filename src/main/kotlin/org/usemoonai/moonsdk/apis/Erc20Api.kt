@@ -19,8 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
 import org.usemoonai.moonsdk.models.InputBody
+import org.usemoonai.moonsdk.models.TransactionAPIResponse
 
 import com.squareup.moshi.Json
 
@@ -42,7 +42,7 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -52,7 +52,7 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +61,11 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun allowanceErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : AccountControllerResponse {
+    fun allowanceErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : TransactionAPIResponse {
         val localVarResponse = allowanceErc20WithHttpInfo(authorization = authorization, name = name, inputBody = inputBody)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -85,16 +85,16 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun allowanceErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<AccountControllerResponse?> {
+    fun allowanceErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = allowanceErc20RequestConfig(authorization = authorization, name = name, inputBody = inputBody)
 
-        return request<InputBody, AccountControllerResponse>(
+        return request<InputBody, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -131,7 +131,7 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -140,11 +140,11 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun approveErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : AccountControllerResponse {
+    fun approveErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : TransactionAPIResponse {
         val localVarResponse = approveErc20WithHttpInfo(authorization = authorization, name = name, inputBody = inputBody)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -164,16 +164,16 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun approveErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<AccountControllerResponse?> {
+    fun approveErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = approveErc20RequestConfig(authorization = authorization, name = name, inputBody = inputBody)
 
-        return request<InputBody, AccountControllerResponse>(
+        return request<InputBody, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -210,7 +210,7 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -219,11 +219,11 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun balanceOfErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : AccountControllerResponse {
+    fun balanceOfErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : TransactionAPIResponse {
         val localVarResponse = balanceOfErc20WithHttpInfo(authorization = authorization, name = name, inputBody = inputBody)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -243,16 +243,16 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun balanceOfErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<AccountControllerResponse?> {
+    fun balanceOfErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = balanceOfErc20RequestConfig(authorization = authorization, name = name, inputBody = inputBody)
 
-        return request<InputBody, AccountControllerResponse>(
+        return request<InputBody, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -289,7 +289,7 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -298,11 +298,11 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun decimalsErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : AccountControllerResponse {
+    fun decimalsErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : TransactionAPIResponse {
         val localVarResponse = decimalsErc20WithHttpInfo(authorization = authorization, name = name, inputBody = inputBody)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -322,16 +322,16 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun decimalsErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<AccountControllerResponse?> {
+    fun decimalsErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = decimalsErc20RequestConfig(authorization = authorization, name = name, inputBody = inputBody)
 
-        return request<InputBody, AccountControllerResponse>(
+        return request<InputBody, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -368,7 +368,7 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -377,11 +377,11 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun nameErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : AccountControllerResponse {
+    fun nameErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : TransactionAPIResponse {
         val localVarResponse = nameErc20WithHttpInfo(authorization = authorization, name = name, inputBody = inputBody)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -401,16 +401,16 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun nameErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<AccountControllerResponse?> {
+    fun nameErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = nameErc20RequestConfig(authorization = authorization, name = name, inputBody = inputBody)
 
-        return request<InputBody, AccountControllerResponse>(
+        return request<InputBody, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -447,7 +447,7 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -456,11 +456,11 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun symbolErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : AccountControllerResponse {
+    fun symbolErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : TransactionAPIResponse {
         val localVarResponse = symbolErc20WithHttpInfo(authorization = authorization, name = name, inputBody = inputBody)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -480,16 +480,16 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun symbolErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<AccountControllerResponse?> {
+    fun symbolErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = symbolErc20RequestConfig(authorization = authorization, name = name, inputBody = inputBody)
 
-        return request<InputBody, AccountControllerResponse>(
+        return request<InputBody, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -526,7 +526,7 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -535,11 +535,11 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun totalSupplyErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : AccountControllerResponse {
+    fun totalSupplyErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : TransactionAPIResponse {
         val localVarResponse = totalSupplyErc20WithHttpInfo(authorization = authorization, name = name, inputBody = inputBody)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -559,16 +559,16 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun totalSupplyErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<AccountControllerResponse?> {
+    fun totalSupplyErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = totalSupplyErc20RequestConfig(authorization = authorization, name = name, inputBody = inputBody)
 
-        return request<InputBody, AccountControllerResponse>(
+        return request<InputBody, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -605,7 +605,7 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -614,11 +614,11 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun transferErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : AccountControllerResponse {
+    fun transferErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : TransactionAPIResponse {
         val localVarResponse = transferErc20WithHttpInfo(authorization = authorization, name = name, inputBody = inputBody)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -638,16 +638,16 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun transferErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<AccountControllerResponse?> {
+    fun transferErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = transferErc20RequestConfig(authorization = authorization, name = name, inputBody = inputBody)
 
-        return request<InputBody, AccountControllerResponse>(
+        return request<InputBody, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -684,7 +684,7 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -693,11 +693,11 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun transferFromErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : AccountControllerResponse {
+    fun transferFromErc20(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : TransactionAPIResponse {
         val localVarResponse = transferFromErc20WithHttpInfo(authorization = authorization, name = name, inputBody = inputBody)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -717,16 +717,16 @@ class Erc20Api(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param authorization 
      * @param name 
      * @param inputBody 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun transferFromErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<AccountControllerResponse?> {
+    fun transferFromErc20WithHttpInfo(authorization: kotlin.String, name: kotlin.String, inputBody: InputBody) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = transferFromErc20RequestConfig(authorization = authorization, name = name, inputBody = inputBody)
 
-        return request<InputBody, AccountControllerResponse>(
+        return request<InputBody, TransactionAPIResponse>(
             localVariableConfig
         )
     }

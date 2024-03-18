@@ -1,6 +1,6 @@
 # Erc4337Api
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a id="getAddress"></a>
 # **getAddress**
-> AccountControllerResponse getAddress(authorization, accountName, inputBody)
+> AccountAPIResponse getAddress(authorization, accountName, inputBody)
 
 
 
@@ -25,7 +25,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.getAddress(authorization, accountName, inputBody)
+    val result : AccountAPIResponse = apiInstance.getAddress(authorization, accountName, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc4337Api#getAddress")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Configure BearerAuth:
 
 <a id="signBroadcastUserOpTx"></a>
 # **signBroadcastUserOpTx**
-> AccountControllerResponse signBroadcastUserOpTx(authorization, accountName, inputBody)
+> TransactionAPIResponse signBroadcastUserOpTx(authorization, accountName, inputBody)
 
 
 
@@ -80,7 +80,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.signBroadcastUserOpTx(authorization, accountName, inputBody)
+    val result : TransactionAPIResponse = apiInstance.signBroadcastUserOpTx(authorization, accountName, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc4337Api#signBroadcastUserOpTx")
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 

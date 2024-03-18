@@ -1,6 +1,6 @@
 # Erc20Api
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a id="allowanceErc20"></a>
 # **allowanceErc20**
-> AccountControllerResponse allowanceErc20(authorization, name, inputBody)
+> TransactionAPIResponse allowanceErc20(authorization, name, inputBody)
 
 
 
@@ -32,7 +32,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.allowanceErc20(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.allowanceErc20(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc20Api#allowanceErc20")
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Configure BearerAuth:
 
 <a id="approveErc20"></a>
 # **approveErc20**
-> AccountControllerResponse approveErc20(authorization, name, inputBody)
+> TransactionAPIResponse approveErc20(authorization, name, inputBody)
 
 
 
@@ -87,7 +87,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.approveErc20(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.approveErc20(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc20Api#approveErc20")
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -127,7 +127,7 @@ Configure BearerAuth:
 
 <a id="balanceOfErc20"></a>
 # **balanceOfErc20**
-> AccountControllerResponse balanceOfErc20(authorization, name, inputBody)
+> TransactionAPIResponse balanceOfErc20(authorization, name, inputBody)
 
 
 
@@ -142,7 +142,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.balanceOfErc20(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.balanceOfErc20(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc20Api#balanceOfErc20")
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -182,7 +182,7 @@ Configure BearerAuth:
 
 <a id="decimalsErc20"></a>
 # **decimalsErc20**
-> AccountControllerResponse decimalsErc20(authorization, name, inputBody)
+> TransactionAPIResponse decimalsErc20(authorization, name, inputBody)
 
 
 
@@ -197,7 +197,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.decimalsErc20(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.decimalsErc20(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc20Api#decimalsErc20")
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -237,7 +237,7 @@ Configure BearerAuth:
 
 <a id="nameErc20"></a>
 # **nameErc20**
-> AccountControllerResponse nameErc20(authorization, name, inputBody)
+> TransactionAPIResponse nameErc20(authorization, name, inputBody)
 
 
 
@@ -252,7 +252,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.nameErc20(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.nameErc20(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc20Api#nameErc20")
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -292,7 +292,7 @@ Configure BearerAuth:
 
 <a id="symbolErc20"></a>
 # **symbolErc20**
-> AccountControllerResponse symbolErc20(authorization, name, inputBody)
+> TransactionAPIResponse symbolErc20(authorization, name, inputBody)
 
 
 
@@ -307,7 +307,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.symbolErc20(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.symbolErc20(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc20Api#symbolErc20")
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -347,7 +347,7 @@ Configure BearerAuth:
 
 <a id="totalSupplyErc20"></a>
 # **totalSupplyErc20**
-> AccountControllerResponse totalSupplyErc20(authorization, name, inputBody)
+> TransactionAPIResponse totalSupplyErc20(authorization, name, inputBody)
 
 
 
@@ -362,7 +362,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.totalSupplyErc20(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.totalSupplyErc20(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc20Api#totalSupplyErc20")
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -402,7 +402,7 @@ Configure BearerAuth:
 
 <a id="transferErc20"></a>
 # **transferErc20**
-> AccountControllerResponse transferErc20(authorization, name, inputBody)
+> TransactionAPIResponse transferErc20(authorization, name, inputBody)
 
 
 
@@ -417,7 +417,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.transferErc20(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.transferErc20(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc20Api#transferErc20")
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -457,7 +457,7 @@ Configure BearerAuth:
 
 <a id="transferFromErc20"></a>
 # **transferFromErc20**
-> AccountControllerResponse transferFromErc20(authorization, name, inputBody)
+> TransactionAPIResponse transferFromErc20(authorization, name, inputBody)
 
 
 
@@ -472,7 +472,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.transferFromErc20(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.transferFromErc20(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc20Api#transferFromErc20")
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 

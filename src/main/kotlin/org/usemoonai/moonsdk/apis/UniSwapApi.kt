@@ -19,7 +19,7 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
+import org.usemoonai.moonsdk.models.TransactionAPIResponse
 import org.usemoonai.moonsdk.models.UniswapInput
 
 import com.squareup.moshi.Json
@@ -42,7 +42,7 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -52,7 +52,7 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param authorization 
      * @param name 
      * @param uniswapInput 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +61,11 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun addLiquidity(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : AccountControllerResponse {
+    fun addLiquidity(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : TransactionAPIResponse {
         val localVarResponse = addLiquidityWithHttpInfo(authorization = authorization, name = name, uniswapInput = uniswapInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -85,16 +85,16 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param authorization 
      * @param name 
      * @param uniswapInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun addLiquidityWithHttpInfo(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : ApiResponse<AccountControllerResponse?> {
+    fun addLiquidityWithHttpInfo(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = addLiquidityRequestConfig(authorization = authorization, name = name, uniswapInput = uniswapInput)
 
-        return request<UniswapInput, AccountControllerResponse>(
+        return request<UniswapInput, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -131,7 +131,7 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param authorization 
      * @param name 
      * @param uniswapInput 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -140,11 +140,11 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun removeLiquidity(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : AccountControllerResponse {
+    fun removeLiquidity(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : TransactionAPIResponse {
         val localVarResponse = removeLiquidityWithHttpInfo(authorization = authorization, name = name, uniswapInput = uniswapInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -164,16 +164,16 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param authorization 
      * @param name 
      * @param uniswapInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun removeLiquidityWithHttpInfo(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : ApiResponse<AccountControllerResponse?> {
+    fun removeLiquidityWithHttpInfo(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = removeLiquidityRequestConfig(authorization = authorization, name = name, uniswapInput = uniswapInput)
 
-        return request<UniswapInput, AccountControllerResponse>(
+        return request<UniswapInput, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -210,7 +210,7 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param authorization 
      * @param name 
      * @param uniswapInput 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -219,11 +219,11 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun swapExactETHForTokens(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : AccountControllerResponse {
+    fun swapExactETHForTokens(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : TransactionAPIResponse {
         val localVarResponse = swapExactETHForTokensWithHttpInfo(authorization = authorization, name = name, uniswapInput = uniswapInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -243,16 +243,16 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param authorization 
      * @param name 
      * @param uniswapInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun swapExactETHForTokensWithHttpInfo(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : ApiResponse<AccountControllerResponse?> {
+    fun swapExactETHForTokensWithHttpInfo(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = swapExactETHForTokensRequestConfig(authorization = authorization, name = name, uniswapInput = uniswapInput)
 
-        return request<UniswapInput, AccountControllerResponse>(
+        return request<UniswapInput, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -289,7 +289,7 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param authorization 
      * @param name 
      * @param uniswapInput 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -298,11 +298,11 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun swapExactTokensForTokens(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : AccountControllerResponse {
+    fun swapExactTokensForTokens(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : TransactionAPIResponse {
         val localVarResponse = swapExactTokensForTokensWithHttpInfo(authorization = authorization, name = name, uniswapInput = uniswapInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -322,16 +322,16 @@ class UniSwapApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      * @param authorization 
      * @param name 
      * @param uniswapInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun swapExactTokensForTokensWithHttpInfo(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : ApiResponse<AccountControllerResponse?> {
+    fun swapExactTokensForTokensWithHttpInfo(authorization: kotlin.String, name: kotlin.String, uniswapInput: UniswapInput) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = swapExactTokensForTokensRequestConfig(authorization = authorization, name = name, uniswapInput = uniswapInput)
 
-        return request<UniswapInput, AccountControllerResponse>(
+        return request<UniswapInput, TransactionAPIResponse>(
             localVariableConfig
         )
     }

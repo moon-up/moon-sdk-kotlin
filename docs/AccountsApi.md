@@ -1,6 +1,6 @@
 # AccountsApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a id="broadcastTx"></a>
 # **broadcastTx**
-> AccountControllerResponse broadcastTx(authorization, accountName, broadcastInput)
+> BroadCastRawTransactionAPIResponse broadcastTx(authorization, accountName, broadcastInput)
 
 
 
@@ -35,7 +35,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val broadcastInput : BroadcastInput =  // BroadcastInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.broadcastTx(authorization, accountName, broadcastInput)
+    val result : BroadCastRawTransactionAPIResponse = apiInstance.broadcastTx(authorization, accountName, broadcastInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#broadcastTx")
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**BroadCastRawTransactionAPIResponse**](BroadCastRawTransactionAPIResponse.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Configure BearerAuth:
 
 <a id="createAccount"></a>
 # **createAccount**
-> AccountControllerResponse createAccount(authorization, createAccountInput)
+> AccountAPIResponse createAccount(authorization, createAccountInput)
 
 
 
@@ -89,7 +89,7 @@ val apiInstance = AccountsApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val createAccountInput : CreateAccountInput =  // CreateAccountInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.createAccount(authorization, createAccountInput)
+    val result : AccountAPIResponse = apiInstance.createAccount(authorization, createAccountInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#createAccount")
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ Configure BearerAuth:
 
 <a id="deleteAccount"></a>
 # **deleteAccount**
-> AccountControllerResponse deleteAccount(authorization, accountName)
+> AccountAPIResponse deleteAccount(authorization, accountName)
 
 
 
@@ -142,7 +142,7 @@ val apiInstance = AccountsApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.deleteAccount(authorization, accountName)
+    val result : AccountAPIResponse = apiInstance.deleteAccount(authorization, accountName)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#deleteAccount")
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ Configure BearerAuth:
 
 <a id="deployContract"></a>
 # **deployContract**
-> AccountControllerResponse deployContract(authorization, accountName, deployInput)
+> TransactionAPIResponse deployContract(authorization, accountName, deployInput)
 
 
 
@@ -196,7 +196,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val deployInput : DeployInput =  // DeployInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.deployContract(authorization, accountName, deployInput)
+    val result : TransactionAPIResponse = apiInstance.deployContract(authorization, accountName, deployInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#deployContract")
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -236,7 +236,7 @@ Configure BearerAuth:
 
 <a id="getAccount"></a>
 # **getAccount**
-> AccountControllerResponse getAccount(authorization, accountName)
+> AccountAPIResponse getAccount(authorization, accountName)
 
 
 
@@ -250,7 +250,7 @@ val apiInstance = AccountsApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.getAccount(authorization, accountName)
+    val result : AccountAPIResponse = apiInstance.getAccount(authorization, accountName)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#getAccount")
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -289,7 +289,7 @@ Configure BearerAuth:
 
 <a id="getBalance"></a>
 # **getBalance**
-> AccountControllerResponse getBalance(accountName, authorization, chainId)
+> BalanceAPIResponse getBalance(accountName, authorization, chainId)
 
 
 
@@ -304,7 +304,7 @@ val accountName : kotlin.String = accountName_example // kotlin.String |
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val chainId : kotlin.String = chainId_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.getBalance(accountName, authorization, chainId)
+    val result : BalanceAPIResponse = apiInstance.getBalance(accountName, authorization, chainId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#getBalance")
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**BalanceAPIResponse**](BalanceAPIResponse.md)
 
 ### Authorization
 
@@ -344,7 +344,7 @@ Configure BearerAuth:
 
 <a id="getNonce"></a>
 # **getNonce**
-> AccountControllerResponse getNonce(accountName, authorization)
+> NonceAPIResponse getNonce(accountName, authorization)
 
 
 
@@ -358,7 +358,7 @@ val apiInstance = AccountsApi()
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.getNonce(accountName, authorization)
+    val result : NonceAPIResponse = apiInstance.getNonce(accountName, authorization)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#getNonce")
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**NonceAPIResponse**](NonceAPIResponse.md)
 
 ### Authorization
 
@@ -397,7 +397,7 @@ Configure BearerAuth:
 
 <a id="listAccounts"></a>
 # **listAccounts**
-> AccountControllerResponse listAccounts(authorization)
+> AccountAPIResponse listAccounts(authorization)
 
 
 
@@ -410,7 +410,7 @@ Configure BearerAuth:
 val apiInstance = AccountsApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.listAccounts(authorization)
+    val result : AccountAPIResponse = apiInstance.listAccounts(authorization)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#listAccounts")
@@ -429,7 +429,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -448,7 +448,7 @@ Configure BearerAuth:
 
 <a id="signMessage"></a>
 # **signMessage**
-> AccountControllerResponse signMessage(accountName, authorization, signMessage)
+> SignMessageAPIResponse signMessage(accountName, authorization, signMessage)
 
 
 
@@ -463,7 +463,7 @@ val accountName : kotlin.String = accountName_example // kotlin.String |
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val signMessage : SignMessage =  // SignMessage | 
 try {
-    val result : AccountControllerResponse = apiInstance.signMessage(accountName, authorization, signMessage)
+    val result : SignMessageAPIResponse = apiInstance.signMessage(accountName, authorization, signMessage)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#signMessage")
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**SignMessageAPIResponse**](SignMessageAPIResponse.md)
 
 ### Authorization
 
@@ -503,7 +503,7 @@ Configure BearerAuth:
 
 <a id="signTransaction"></a>
 # **signTransaction**
-> AccountControllerResponse signTransaction(accountName, authorization, inputBody)
+> TransactionAPIResponse signTransaction(accountName, authorization, inputBody)
 
 
 
@@ -518,7 +518,7 @@ val accountName : kotlin.String = accountName_example // kotlin.String |
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.signTransaction(accountName, authorization, inputBody)
+    val result : TransactionAPIResponse = apiInstance.signTransaction(accountName, authorization, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#signTransaction")
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -558,7 +558,7 @@ Configure BearerAuth:
 
 <a id="signTypedData"></a>
 # **signTypedData**
-> AccountControllerResponse signTypedData(accountName, authorization, signTypedData)
+> SignMessageAPIResponse signTypedData(accountName, authorization, signTypedData)
 
 
 
@@ -573,7 +573,7 @@ val accountName : kotlin.String = accountName_example // kotlin.String |
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val signTypedData : SignTypedData =  // SignTypedData | 
 try {
-    val result : AccountControllerResponse = apiInstance.signTypedData(accountName, authorization, signTypedData)
+    val result : SignMessageAPIResponse = apiInstance.signTypedData(accountName, authorization, signTypedData)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#signTypedData")
@@ -594,7 +594,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**SignMessageAPIResponse**](SignMessageAPIResponse.md)
 
 ### Authorization
 
@@ -613,7 +613,7 @@ Configure BearerAuth:
 
 <a id="transferEth"></a>
 # **transferEth**
-> AccountControllerResponse transferEth(accountName, authorization, inputBody)
+> TransactionAPIResponse transferEth(accountName, authorization, inputBody)
 
 
 
@@ -628,7 +628,7 @@ val accountName : kotlin.String = accountName_example // kotlin.String |
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.transferEth(accountName, authorization, inputBody)
+    val result : TransactionAPIResponse = apiInstance.transferEth(accountName, authorization, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AccountsApi#transferEth")
@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 

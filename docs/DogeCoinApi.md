@@ -1,6 +1,6 @@
 # DogeCoinApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a id="createDogeCoinAccount"></a>
 # **createDogeCoinAccount**
-> AccountControllerResponse createDogeCoinAccount(authorization, dogeCoinInput)
+> AccountAPIResponse createDogeCoinAccount(authorization, dogeCoinInput)
 
 
 
@@ -26,7 +26,7 @@ val apiInstance = DogeCoinApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val dogeCoinInput : DogeCoinInput =  // DogeCoinInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.createDogeCoinAccount(authorization, dogeCoinInput)
+    val result : AccountAPIResponse = apiInstance.createDogeCoinAccount(authorization, dogeCoinInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DogeCoinApi#createDogeCoinAccount")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Configure BearerAuth:
 
 <a id="getDogeCoinAccount"></a>
 # **getDogeCoinAccount**
-> AccountControllerResponse getDogeCoinAccount(authorization, accountName)
+> AccountAPIResponse getDogeCoinAccount(authorization, accountName)
 
 
 
@@ -79,7 +79,7 @@ val apiInstance = DogeCoinApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.getDogeCoinAccount(authorization, accountName)
+    val result : AccountAPIResponse = apiInstance.getDogeCoinAccount(authorization, accountName)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DogeCoinApi#getDogeCoinAccount")
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Configure BearerAuth:
 
 <a id="listDogeCoinAccounts"></a>
 # **listDogeCoinAccounts**
-> AccountControllerResponse listDogeCoinAccounts(authorization)
+> AccountAPIResponse listDogeCoinAccounts(authorization)
 
 
 
@@ -131,7 +131,7 @@ Configure BearerAuth:
 val apiInstance = DogeCoinApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.listDogeCoinAccounts(authorization)
+    val result : AccountAPIResponse = apiInstance.listDogeCoinAccounts(authorization)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DogeCoinApi#listDogeCoinAccounts")
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Configure BearerAuth:
 
 <a id="signDogeCoinTransaction"></a>
 # **signDogeCoinTransaction**
-> AccountControllerResponse signDogeCoinTransaction(authorization, accountName, dogeCoinTransactionInput)
+> DogeCoinAPIResponse signDogeCoinTransaction(authorization, accountName, dogeCoinTransactionInput)
 
 
 
@@ -184,7 +184,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val dogeCoinTransactionInput : DogeCoinTransactionInput =  // DogeCoinTransactionInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.signDogeCoinTransaction(authorization, accountName, dogeCoinTransactionInput)
+    val result : DogeCoinAPIResponse = apiInstance.signDogeCoinTransaction(authorization, accountName, dogeCoinTransactionInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DogeCoinApi#signDogeCoinTransaction")
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**DogeCoinAPIResponse**](DogeCoinAPIResponse.md)
 
 ### Authorization
 

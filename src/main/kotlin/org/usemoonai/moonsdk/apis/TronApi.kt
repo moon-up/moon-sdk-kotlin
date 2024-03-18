@@ -19,7 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
+import org.usemoonai.moonsdk.models.AccountAPIResponse
+import org.usemoonai.moonsdk.models.TronAPIResponse
 import org.usemoonai.moonsdk.models.TronInput
 import org.usemoonai.moonsdk.models.TronTransactionInput
 
@@ -43,7 +44,7 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -52,7 +53,7 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * 
      * @param authorization 
      * @param tronInput 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +62,11 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createTronAccount(authorization: kotlin.String, tronInput: TronInput) : AccountControllerResponse {
+    fun createTronAccount(authorization: kotlin.String, tronInput: TronInput) : AccountAPIResponse {
         val localVarResponse = createTronAccountWithHttpInfo(authorization = authorization, tronInput = tronInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -84,16 +85,16 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * 
      * @param authorization 
      * @param tronInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createTronAccountWithHttpInfo(authorization: kotlin.String, tronInput: TronInput) : ApiResponse<AccountControllerResponse?> {
+    fun createTronAccountWithHttpInfo(authorization: kotlin.String, tronInput: TronInput) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = createTronAccountRequestConfig(authorization = authorization, tronInput = tronInput)
 
-        return request<TronInput, AccountControllerResponse>(
+        return request<TronInput, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -128,7 +129,7 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * 
      * @param authorization 
      * @param accountName 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -137,11 +138,11 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getTronAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountControllerResponse {
+    fun getTronAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountAPIResponse {
         val localVarResponse = getTronAccountWithHttpInfo(authorization = authorization, accountName = accountName)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -160,16 +161,16 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * 
      * @param authorization 
      * @param accountName 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getTronAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun getTronAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = getTronAccountRequestConfig(authorization = authorization, accountName = accountName)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -202,7 +203,7 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * 
      * 
      * @param authorization 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -211,11 +212,11 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun listTronAccounts(authorization: kotlin.String) : AccountControllerResponse {
+    fun listTronAccounts(authorization: kotlin.String) : AccountAPIResponse {
         val localVarResponse = listTronAccountsWithHttpInfo(authorization = authorization)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -233,16 +234,16 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * 
      * 
      * @param authorization 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun listTronAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun listTronAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = listTronAccountsRequestConfig(authorization = authorization)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -276,7 +277,7 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param authorization 
      * @param accountName 
      * @param tronTransactionInput 
-     * @return AccountControllerResponse
+     * @return TronAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -285,11 +286,11 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun signTronTransaction(authorization: kotlin.String, accountName: kotlin.String, tronTransactionInput: TronTransactionInput) : AccountControllerResponse {
+    fun signTronTransaction(authorization: kotlin.String, accountName: kotlin.String, tronTransactionInput: TronTransactionInput) : TronAPIResponse {
         val localVarResponse = signTronTransactionWithHttpInfo(authorization = authorization, accountName = accountName, tronTransactionInput = tronTransactionInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TronAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -309,16 +310,16 @@ class TronApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param authorization 
      * @param accountName 
      * @param tronTransactionInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TronAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun signTronTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, tronTransactionInput: TronTransactionInput) : ApiResponse<AccountControllerResponse?> {
+    fun signTronTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, tronTransactionInput: TronTransactionInput) : ApiResponse<TronAPIResponse?> {
         val localVariableConfig = signTronTransactionRequestConfig(authorization = authorization, accountName = accountName, tronTransactionInput = tronTransactionInput)
 
-        return request<TronTransactionInput, AccountControllerResponse>(
+        return request<TronTransactionInput, TronAPIResponse>(
             localVariableConfig
         )
     }

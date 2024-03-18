@@ -19,7 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
+import org.usemoonai.moonsdk.models.AccountAPIResponse
+import org.usemoonai.moonsdk.models.CosmosAPIResponse
 import org.usemoonai.moonsdk.models.CosmosInput
 import org.usemoonai.moonsdk.models.CosmosTransactionInput
 
@@ -43,7 +44,7 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -52,7 +53,7 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * @param authorization 
      * @param cosmosInput 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +62,11 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createCosmosAccount(authorization: kotlin.String, cosmosInput: CosmosInput) : AccountControllerResponse {
+    fun createCosmosAccount(authorization: kotlin.String, cosmosInput: CosmosInput) : AccountAPIResponse {
         val localVarResponse = createCosmosAccountWithHttpInfo(authorization = authorization, cosmosInput = cosmosInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -84,16 +85,16 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * @param authorization 
      * @param cosmosInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createCosmosAccountWithHttpInfo(authorization: kotlin.String, cosmosInput: CosmosInput) : ApiResponse<AccountControllerResponse?> {
+    fun createCosmosAccountWithHttpInfo(authorization: kotlin.String, cosmosInput: CosmosInput) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = createCosmosAccountRequestConfig(authorization = authorization, cosmosInput = cosmosInput)
 
-        return request<CosmosInput, AccountControllerResponse>(
+        return request<CosmosInput, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -128,7 +129,7 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * @param authorization 
      * @param accountName 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -137,11 +138,11 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getCosmosAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountControllerResponse {
+    fun getCosmosAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountAPIResponse {
         val localVarResponse = getCosmosAccountWithHttpInfo(authorization = authorization, accountName = accountName)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -160,16 +161,16 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * @param authorization 
      * @param accountName 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getCosmosAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun getCosmosAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = getCosmosAccountRequestConfig(authorization = authorization, accountName = accountName)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -202,7 +203,7 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * 
      * @param authorization 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -211,11 +212,11 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun listCosmosAccounts(authorization: kotlin.String) : AccountControllerResponse {
+    fun listCosmosAccounts(authorization: kotlin.String) : AccountAPIResponse {
         val localVarResponse = listCosmosAccountsWithHttpInfo(authorization = authorization)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -233,16 +234,16 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * 
      * 
      * @param authorization 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun listCosmosAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun listCosmosAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = listCosmosAccountsRequestConfig(authorization = authorization)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -276,7 +277,7 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * @param authorization 
      * @param accountName 
      * @param cosmosTransactionInput 
-     * @return AccountControllerResponse
+     * @return CosmosAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -285,11 +286,11 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun signCosmosTransaction(authorization: kotlin.String, accountName: kotlin.String, cosmosTransactionInput: CosmosTransactionInput) : AccountControllerResponse {
+    fun signCosmosTransaction(authorization: kotlin.String, accountName: kotlin.String, cosmosTransactionInput: CosmosTransactionInput) : CosmosAPIResponse {
         val localVarResponse = signCosmosTransactionWithHttpInfo(authorization = authorization, accountName = accountName, cosmosTransactionInput = cosmosTransactionInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CosmosAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -309,16 +310,16 @@ class CosmosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient 
      * @param authorization 
      * @param accountName 
      * @param cosmosTransactionInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<CosmosAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun signCosmosTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, cosmosTransactionInput: CosmosTransactionInput) : ApiResponse<AccountControllerResponse?> {
+    fun signCosmosTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, cosmosTransactionInput: CosmosTransactionInput) : ApiResponse<CosmosAPIResponse?> {
         val localVariableConfig = signCosmosTransactionRequestConfig(authorization = authorization, accountName = accountName, cosmosTransactionInput = cosmosTransactionInput)
 
-        return request<CosmosTransactionInput, AccountControllerResponse>(
+        return request<CosmosTransactionInput, CosmosAPIResponse>(
             localVariableConfig
         )
     }

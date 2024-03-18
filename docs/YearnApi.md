@@ -1,6 +1,6 @@
 # YearnApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a id="addLiquidity"></a>
 # **addLiquidity**
-> AccountControllerResponse addLiquidity(authorization, name, inputBody)
+> TransactionAPIResponse addLiquidity(authorization, name, inputBody)
 
 
 
@@ -27,7 +27,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.addLiquidity(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.addLiquidity(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling YearnApi#addLiquidity")
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Configure BearerAuth:
 
 <a id="addLiquidityWeth"></a>
 # **addLiquidityWeth**
-> AccountControllerResponse addLiquidityWeth(authorization, name, inputBody)
+> TransactionAPIResponse addLiquidityWeth(authorization, name, inputBody)
 
 
 
@@ -82,7 +82,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.addLiquidityWeth(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.addLiquidityWeth(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling YearnApi#addLiquidityWeth")
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ Configure BearerAuth:
 
 <a id="removeLiquidity"></a>
 # **removeLiquidity**
-> AccountControllerResponse removeLiquidity(authorization, name, inputBody)
+> TransactionAPIResponse removeLiquidity(authorization, name, inputBody)
 
 
 
@@ -137,7 +137,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.removeLiquidity(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.removeLiquidity(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling YearnApi#removeLiquidity")
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ Configure BearerAuth:
 
 <a id="removeLiquidityWeth"></a>
 # **removeLiquidityWeth**
-> AccountControllerResponse removeLiquidityWeth(authorization, name, inputBody)
+> TransactionAPIResponse removeLiquidityWeth(authorization, name, inputBody)
 
 
 
@@ -192,7 +192,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val inputBody : InputBody =  // InputBody | 
 try {
-    val result : AccountControllerResponse = apiInstance.removeLiquidityWeth(authorization, name, inputBody)
+    val result : TransactionAPIResponse = apiInstance.removeLiquidityWeth(authorization, name, inputBody)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling YearnApi#removeLiquidityWeth")
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 

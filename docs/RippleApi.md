@@ -1,6 +1,6 @@
 # RippleApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a id="createRippleAccount"></a>
 # **createRippleAccount**
-> AccountControllerResponse createRippleAccount(authorization, rippleInput)
+> AccountAPIResponse createRippleAccount(authorization, rippleInput)
 
 
 
@@ -26,7 +26,7 @@ val apiInstance = RippleApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val rippleInput : RippleInput =  // RippleInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.createRippleAccount(authorization, rippleInput)
+    val result : AccountAPIResponse = apiInstance.createRippleAccount(authorization, rippleInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling RippleApi#createRippleAccount")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Configure BearerAuth:
 
 <a id="getRippleAccount"></a>
 # **getRippleAccount**
-> AccountControllerResponse getRippleAccount(authorization, accountName)
+> AccountAPIResponse getRippleAccount(authorization, accountName)
 
 
 
@@ -79,7 +79,7 @@ val apiInstance = RippleApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.getRippleAccount(authorization, accountName)
+    val result : AccountAPIResponse = apiInstance.getRippleAccount(authorization, accountName)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling RippleApi#getRippleAccount")
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Configure BearerAuth:
 
 <a id="listRippleAccounts"></a>
 # **listRippleAccounts**
-> AccountControllerResponse listRippleAccounts(authorization)
+> AccountAPIResponse listRippleAccounts(authorization)
 
 
 
@@ -131,7 +131,7 @@ Configure BearerAuth:
 val apiInstance = RippleApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.listRippleAccounts(authorization)
+    val result : AccountAPIResponse = apiInstance.listRippleAccounts(authorization)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling RippleApi#listRippleAccounts")
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Configure BearerAuth:
 
 <a id="signRippleTransaction"></a>
 # **signRippleTransaction**
-> AccountControllerResponse signRippleTransaction(authorization, accountName, rippleTransactionInput)
+> RippleAPIResponse signRippleTransaction(authorization, accountName, rippleTransactionInput)
 
 
 
@@ -184,7 +184,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val rippleTransactionInput : RippleTransactionInput =  // RippleTransactionInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.signRippleTransaction(authorization, accountName, rippleTransactionInput)
+    val result : RippleAPIResponse = apiInstance.signRippleTransaction(authorization, accountName, rippleTransactionInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling RippleApi#signRippleTransaction")
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**RippleAPIResponse**](RippleAPIResponse.md)
 
 ### Authorization
 

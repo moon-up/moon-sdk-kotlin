@@ -19,7 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
+import org.usemoonai.moonsdk.models.AccountAPIResponse
+import org.usemoonai.moonsdk.models.EosAPIResponse
 import org.usemoonai.moonsdk.models.EosInput
 import org.usemoonai.moonsdk.models.EosTransactionInput
 
@@ -43,7 +44,7 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -52,7 +53,7 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      * 
      * @param authorization 
      * @param eosInput 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +62,11 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createEosAccount(authorization: kotlin.String, eosInput: EosInput) : AccountControllerResponse {
+    fun createEosAccount(authorization: kotlin.String, eosInput: EosInput) : AccountAPIResponse {
         val localVarResponse = createEosAccountWithHttpInfo(authorization = authorization, eosInput = eosInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -84,16 +85,16 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      * 
      * @param authorization 
      * @param eosInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createEosAccountWithHttpInfo(authorization: kotlin.String, eosInput: EosInput) : ApiResponse<AccountControllerResponse?> {
+    fun createEosAccountWithHttpInfo(authorization: kotlin.String, eosInput: EosInput) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = createEosAccountRequestConfig(authorization = authorization, eosInput = eosInput)
 
-        return request<EosInput, AccountControllerResponse>(
+        return request<EosInput, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -128,7 +129,7 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      * 
      * @param authorization 
      * @param accountName 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -137,11 +138,11 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getEosAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountControllerResponse {
+    fun getEosAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountAPIResponse {
         val localVarResponse = getEosAccountWithHttpInfo(authorization = authorization, accountName = accountName)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -160,16 +161,16 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      * 
      * @param authorization 
      * @param accountName 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getEosAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun getEosAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = getEosAccountRequestConfig(authorization = authorization, accountName = accountName)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -202,7 +203,7 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      * 
      * 
      * @param authorization 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -211,11 +212,11 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun listEosAccounts(authorization: kotlin.String) : AccountControllerResponse {
+    fun listEosAccounts(authorization: kotlin.String) : AccountAPIResponse {
         val localVarResponse = listEosAccountsWithHttpInfo(authorization = authorization)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -233,16 +234,16 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      * 
      * 
      * @param authorization 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun listEosAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun listEosAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = listEosAccountsRequestConfig(authorization = authorization)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -276,7 +277,7 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      * @param authorization 
      * @param accountName 
      * @param eosTransactionInput 
-     * @return AccountControllerResponse
+     * @return EosAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -285,11 +286,11 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun signEosTransaction(authorization: kotlin.String, accountName: kotlin.String, eosTransactionInput: EosTransactionInput) : AccountControllerResponse {
+    fun signEosTransaction(authorization: kotlin.String, accountName: kotlin.String, eosTransactionInput: EosTransactionInput) : EosAPIResponse {
         val localVarResponse = signEosTransactionWithHttpInfo(authorization = authorization, accountName = accountName, eosTransactionInput = eosTransactionInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as EosAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -309,16 +310,16 @@ class EosApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      * @param authorization 
      * @param accountName 
      * @param eosTransactionInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<EosAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun signEosTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, eosTransactionInput: EosTransactionInput) : ApiResponse<AccountControllerResponse?> {
+    fun signEosTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, eosTransactionInput: EosTransactionInput) : ApiResponse<EosAPIResponse?> {
         val localVariableConfig = signEosTransactionRequestConfig(authorization = authorization, accountName = accountName, eosTransactionInput = eosTransactionInput)
 
-        return request<EosTransactionInput, AccountControllerResponse>(
+        return request<EosTransactionInput, EosAPIResponse>(
             localVariableConfig
         )
     }

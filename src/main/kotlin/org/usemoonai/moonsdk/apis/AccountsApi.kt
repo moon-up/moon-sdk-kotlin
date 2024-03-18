@@ -19,13 +19,18 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
+import org.usemoonai.moonsdk.models.AccountAPIResponse
+import org.usemoonai.moonsdk.models.BalanceAPIResponse
+import org.usemoonai.moonsdk.models.BroadCastRawTransactionAPIResponse
 import org.usemoonai.moonsdk.models.BroadcastInput
 import org.usemoonai.moonsdk.models.CreateAccountInput
 import org.usemoonai.moonsdk.models.DeployInput
 import org.usemoonai.moonsdk.models.InputBody
+import org.usemoonai.moonsdk.models.NonceAPIResponse
 import org.usemoonai.moonsdk.models.SignMessage
+import org.usemoonai.moonsdk.models.SignMessageAPIResponse
 import org.usemoonai.moonsdk.models.SignTypedData
+import org.usemoonai.moonsdk.models.TransactionAPIResponse
 
 import com.squareup.moshi.Json
 
@@ -47,7 +52,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -57,7 +62,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param authorization 
      * @param accountName 
      * @param broadcastInput 
-     * @return AccountControllerResponse
+     * @return BroadCastRawTransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -66,11 +71,11 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun broadcastTx(authorization: kotlin.String, accountName: kotlin.String, broadcastInput: BroadcastInput) : AccountControllerResponse {
+    fun broadcastTx(authorization: kotlin.String, accountName: kotlin.String, broadcastInput: BroadcastInput) : BroadCastRawTransactionAPIResponse {
         val localVarResponse = broadcastTxWithHttpInfo(authorization = authorization, accountName = accountName, broadcastInput = broadcastInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as BroadCastRawTransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -90,16 +95,16 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param authorization 
      * @param accountName 
      * @param broadcastInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<BroadCastRawTransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun broadcastTxWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, broadcastInput: BroadcastInput) : ApiResponse<AccountControllerResponse?> {
+    fun broadcastTxWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, broadcastInput: BroadcastInput) : ApiResponse<BroadCastRawTransactionAPIResponse?> {
         val localVariableConfig = broadcastTxRequestConfig(authorization = authorization, accountName = accountName, broadcastInput = broadcastInput)
 
-        return request<BroadcastInput, AccountControllerResponse>(
+        return request<BroadcastInput, BroadCastRawTransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -135,7 +140,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param createAccountInput 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -144,11 +149,11 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createAccount(authorization: kotlin.String, createAccountInput: CreateAccountInput) : AccountControllerResponse {
+    fun createAccount(authorization: kotlin.String, createAccountInput: CreateAccountInput) : AccountAPIResponse {
         val localVarResponse = createAccountWithHttpInfo(authorization = authorization, createAccountInput = createAccountInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -167,16 +172,16 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param createAccountInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createAccountWithHttpInfo(authorization: kotlin.String, createAccountInput: CreateAccountInput) : ApiResponse<AccountControllerResponse?> {
+    fun createAccountWithHttpInfo(authorization: kotlin.String, createAccountInput: CreateAccountInput) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = createAccountRequestConfig(authorization = authorization, createAccountInput = createAccountInput)
 
-        return request<CreateAccountInput, AccountControllerResponse>(
+        return request<CreateAccountInput, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -211,7 +216,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param accountName 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -220,11 +225,11 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun deleteAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountControllerResponse {
+    fun deleteAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountAPIResponse {
         val localVarResponse = deleteAccountWithHttpInfo(authorization = authorization, accountName = accountName)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -243,16 +248,16 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param accountName 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun deleteAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun deleteAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = deleteAccountRequestConfig(authorization = authorization, accountName = accountName)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -287,7 +292,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param authorization 
      * @param accountName 
      * @param deployInput 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -296,11 +301,11 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun deployContract(authorization: kotlin.String, accountName: kotlin.String, deployInput: DeployInput) : AccountControllerResponse {
+    fun deployContract(authorization: kotlin.String, accountName: kotlin.String, deployInput: DeployInput) : TransactionAPIResponse {
         val localVarResponse = deployContractWithHttpInfo(authorization = authorization, accountName = accountName, deployInput = deployInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -320,16 +325,16 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param authorization 
      * @param accountName 
      * @param deployInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun deployContractWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, deployInput: DeployInput) : ApiResponse<AccountControllerResponse?> {
+    fun deployContractWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, deployInput: DeployInput) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = deployContractRequestConfig(authorization = authorization, accountName = accountName, deployInput = deployInput)
 
-        return request<DeployInput, AccountControllerResponse>(
+        return request<DeployInput, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -365,7 +370,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param accountName 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -374,11 +379,11 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountControllerResponse {
+    fun getAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountAPIResponse {
         val localVarResponse = getAccountWithHttpInfo(authorization = authorization, accountName = accountName)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -397,16 +402,16 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param accountName 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun getAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = getAccountRequestConfig(authorization = authorization, accountName = accountName)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -441,7 +446,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param accountName 
      * @param authorization 
      * @param chainId 
-     * @return AccountControllerResponse
+     * @return BalanceAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -450,11 +455,11 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getBalance(accountName: kotlin.String, authorization: kotlin.String, chainId: kotlin.String) : AccountControllerResponse {
+    fun getBalance(accountName: kotlin.String, authorization: kotlin.String, chainId: kotlin.String) : BalanceAPIResponse {
         val localVarResponse = getBalanceWithHttpInfo(accountName = accountName, authorization = authorization, chainId = chainId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as BalanceAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -474,16 +479,16 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param accountName 
      * @param authorization 
      * @param chainId 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<BalanceAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getBalanceWithHttpInfo(accountName: kotlin.String, authorization: kotlin.String, chainId: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun getBalanceWithHttpInfo(accountName: kotlin.String, authorization: kotlin.String, chainId: kotlin.String) : ApiResponse<BalanceAPIResponse?> {
         val localVariableConfig = getBalanceRequestConfig(accountName = accountName, authorization = authorization, chainId = chainId)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, BalanceAPIResponse>(
             localVariableConfig
         )
     }
@@ -521,7 +526,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param accountName 
      * @param authorization 
-     * @return AccountControllerResponse
+     * @return NonceAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -530,11 +535,11 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getNonce(accountName: kotlin.String, authorization: kotlin.String) : AccountControllerResponse {
+    fun getNonce(accountName: kotlin.String, authorization: kotlin.String) : NonceAPIResponse {
         val localVarResponse = getNonceWithHttpInfo(accountName = accountName, authorization = authorization)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as NonceAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -553,16 +558,16 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param accountName 
      * @param authorization 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<NonceAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getNonceWithHttpInfo(accountName: kotlin.String, authorization: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun getNonceWithHttpInfo(accountName: kotlin.String, authorization: kotlin.String) : ApiResponse<NonceAPIResponse?> {
         val localVariableConfig = getNonceRequestConfig(accountName = accountName, authorization = authorization)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, NonceAPIResponse>(
             localVariableConfig
         )
     }
@@ -595,7 +600,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * 
      * @param authorization 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -604,11 +609,11 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun listAccounts(authorization: kotlin.String) : AccountControllerResponse {
+    fun listAccounts(authorization: kotlin.String) : AccountAPIResponse {
         val localVarResponse = listAccountsWithHttpInfo(authorization = authorization)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -626,16 +631,16 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * 
      * @param authorization 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun listAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun listAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = listAccountsRequestConfig(authorization = authorization)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -669,7 +674,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param accountName 
      * @param authorization 
      * @param signMessage 
-     * @return AccountControllerResponse
+     * @return SignMessageAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -678,11 +683,11 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun signMessage(accountName: kotlin.String, authorization: kotlin.String, signMessage: SignMessage) : AccountControllerResponse {
+    fun signMessage(accountName: kotlin.String, authorization: kotlin.String, signMessage: SignMessage) : SignMessageAPIResponse {
         val localVarResponse = signMessageWithHttpInfo(accountName = accountName, authorization = authorization, signMessage = signMessage)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SignMessageAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -702,16 +707,16 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param accountName 
      * @param authorization 
      * @param signMessage 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<SignMessageAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun signMessageWithHttpInfo(accountName: kotlin.String, authorization: kotlin.String, signMessage: SignMessage) : ApiResponse<AccountControllerResponse?> {
+    fun signMessageWithHttpInfo(accountName: kotlin.String, authorization: kotlin.String, signMessage: SignMessage) : ApiResponse<SignMessageAPIResponse?> {
         val localVariableConfig = signMessageRequestConfig(accountName = accountName, authorization = authorization, signMessage = signMessage)
 
-        return request<SignMessage, AccountControllerResponse>(
+        return request<SignMessage, SignMessageAPIResponse>(
             localVariableConfig
         )
     }
@@ -748,7 +753,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param accountName 
      * @param authorization 
      * @param inputBody 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -757,11 +762,11 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun signTransaction(accountName: kotlin.String, authorization: kotlin.String, inputBody: InputBody) : AccountControllerResponse {
+    fun signTransaction(accountName: kotlin.String, authorization: kotlin.String, inputBody: InputBody) : TransactionAPIResponse {
         val localVarResponse = signTransactionWithHttpInfo(accountName = accountName, authorization = authorization, inputBody = inputBody)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -781,16 +786,16 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param accountName 
      * @param authorization 
      * @param inputBody 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun signTransactionWithHttpInfo(accountName: kotlin.String, authorization: kotlin.String, inputBody: InputBody) : ApiResponse<AccountControllerResponse?> {
+    fun signTransactionWithHttpInfo(accountName: kotlin.String, authorization: kotlin.String, inputBody: InputBody) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = signTransactionRequestConfig(accountName = accountName, authorization = authorization, inputBody = inputBody)
 
-        return request<InputBody, AccountControllerResponse>(
+        return request<InputBody, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -827,7 +832,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param accountName 
      * @param authorization 
      * @param signTypedData 
-     * @return AccountControllerResponse
+     * @return SignMessageAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -836,11 +841,11 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun signTypedData(accountName: kotlin.String, authorization: kotlin.String, signTypedData: SignTypedData) : AccountControllerResponse {
+    fun signTypedData(accountName: kotlin.String, authorization: kotlin.String, signTypedData: SignTypedData) : SignMessageAPIResponse {
         val localVarResponse = signTypedDataWithHttpInfo(accountName = accountName, authorization = authorization, signTypedData = signTypedData)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SignMessageAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -860,16 +865,16 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param accountName 
      * @param authorization 
      * @param signTypedData 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<SignMessageAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun signTypedDataWithHttpInfo(accountName: kotlin.String, authorization: kotlin.String, signTypedData: SignTypedData) : ApiResponse<AccountControllerResponse?> {
+    fun signTypedDataWithHttpInfo(accountName: kotlin.String, authorization: kotlin.String, signTypedData: SignTypedData) : ApiResponse<SignMessageAPIResponse?> {
         val localVariableConfig = signTypedDataRequestConfig(accountName = accountName, authorization = authorization, signTypedData = signTypedData)
 
-        return request<SignTypedData, AccountControllerResponse>(
+        return request<SignTypedData, SignMessageAPIResponse>(
             localVariableConfig
         )
     }
@@ -906,7 +911,7 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param accountName 
      * @param authorization 
      * @param inputBody 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -915,11 +920,11 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun transferEth(accountName: kotlin.String, authorization: kotlin.String, inputBody: InputBody) : AccountControllerResponse {
+    fun transferEth(accountName: kotlin.String, authorization: kotlin.String, inputBody: InputBody) : TransactionAPIResponse {
         val localVarResponse = transferEthWithHttpInfo(accountName = accountName, authorization = authorization, inputBody = inputBody)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -939,16 +944,16 @@ class AccountsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param accountName 
      * @param authorization 
      * @param inputBody 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun transferEthWithHttpInfo(accountName: kotlin.String, authorization: kotlin.String, inputBody: InputBody) : ApiResponse<AccountControllerResponse?> {
+    fun transferEthWithHttpInfo(accountName: kotlin.String, authorization: kotlin.String, inputBody: InputBody) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = transferEthRequestConfig(accountName = accountName, authorization = authorization, inputBody = inputBody)
 
-        return request<InputBody, AccountControllerResponse>(
+        return request<InputBody, TransactionAPIResponse>(
             localVariableConfig
         )
     }

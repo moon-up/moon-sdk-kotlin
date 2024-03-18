@@ -1,6 +1,6 @@
 # SolanaApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a id="createSolanaAccount"></a>
 # **createSolanaAccount**
-> AccountControllerResponse createSolanaAccount(authorization, solanaInput)
+> AccountAPIResponse createSolanaAccount(authorization, solanaInput)
 
 
 
@@ -26,7 +26,7 @@ val apiInstance = SolanaApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val solanaInput : SolanaInput =  // SolanaInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.createSolanaAccount(authorization, solanaInput)
+    val result : AccountAPIResponse = apiInstance.createSolanaAccount(authorization, solanaInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SolanaApi#createSolanaAccount")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Configure BearerAuth:
 
 <a id="getSolanaAccount"></a>
 # **getSolanaAccount**
-> AccountControllerResponse getSolanaAccount(authorization, accountName)
+> AccountAPIResponse getSolanaAccount(authorization, accountName)
 
 
 
@@ -79,7 +79,7 @@ val apiInstance = SolanaApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.getSolanaAccount(authorization, accountName)
+    val result : AccountAPIResponse = apiInstance.getSolanaAccount(authorization, accountName)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SolanaApi#getSolanaAccount")
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Configure BearerAuth:
 
 <a id="listSolanaAccounts"></a>
 # **listSolanaAccounts**
-> AccountControllerResponse listSolanaAccounts(authorization)
+> AccountAPIResponse listSolanaAccounts(authorization)
 
 
 
@@ -131,7 +131,7 @@ Configure BearerAuth:
 val apiInstance = SolanaApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.listSolanaAccounts(authorization)
+    val result : AccountAPIResponse = apiInstance.listSolanaAccounts(authorization)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SolanaApi#listSolanaAccounts")
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Configure BearerAuth:
 
 <a id="signSolanaTransaction"></a>
 # **signSolanaTransaction**
-> AccountControllerResponse signSolanaTransaction(authorization, accountName, solanaTransactionInput)
+> SolanaAPIResponse signSolanaTransaction(authorization, accountName, solanaTransactionInput)
 
 
 
@@ -184,7 +184,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val solanaTransactionInput : SolanaTransactionInput =  // SolanaTransactionInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.signSolanaTransaction(authorization, accountName, solanaTransactionInput)
+    val result : SolanaAPIResponse = apiInstance.signSolanaTransaction(authorization, accountName, solanaTransactionInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SolanaApi#signSolanaTransaction")
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**SolanaAPIResponse**](SolanaAPIResponse.md)
 
 ### Authorization
 

@@ -19,7 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
+import org.usemoonai.moonsdk.models.AccountAPIResponse
+import org.usemoonai.moonsdk.models.DogeCoinAPIResponse
 import org.usemoonai.moonsdk.models.DogeCoinInput
 import org.usemoonai.moonsdk.models.DogeCoinTransactionInput
 
@@ -43,7 +44,7 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -52,7 +53,7 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param dogeCoinInput 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +62,11 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createDogeCoinAccount(authorization: kotlin.String, dogeCoinInput: DogeCoinInput) : AccountControllerResponse {
+    fun createDogeCoinAccount(authorization: kotlin.String, dogeCoinInput: DogeCoinInput) : AccountAPIResponse {
         val localVarResponse = createDogeCoinAccountWithHttpInfo(authorization = authorization, dogeCoinInput = dogeCoinInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -84,16 +85,16 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param dogeCoinInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createDogeCoinAccountWithHttpInfo(authorization: kotlin.String, dogeCoinInput: DogeCoinInput) : ApiResponse<AccountControllerResponse?> {
+    fun createDogeCoinAccountWithHttpInfo(authorization: kotlin.String, dogeCoinInput: DogeCoinInput) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = createDogeCoinAccountRequestConfig(authorization = authorization, dogeCoinInput = dogeCoinInput)
 
-        return request<DogeCoinInput, AccountControllerResponse>(
+        return request<DogeCoinInput, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -128,7 +129,7 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param accountName 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -137,11 +138,11 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getDogeCoinAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountControllerResponse {
+    fun getDogeCoinAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountAPIResponse {
         val localVarResponse = getDogeCoinAccountWithHttpInfo(authorization = authorization, accountName = accountName)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -160,16 +161,16 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param accountName 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getDogeCoinAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun getDogeCoinAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = getDogeCoinAccountRequestConfig(authorization = authorization, accountName = accountName)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -202,7 +203,7 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * 
      * @param authorization 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -211,11 +212,11 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun listDogeCoinAccounts(authorization: kotlin.String) : AccountControllerResponse {
+    fun listDogeCoinAccounts(authorization: kotlin.String) : AccountAPIResponse {
         val localVarResponse = listDogeCoinAccountsWithHttpInfo(authorization = authorization)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -233,16 +234,16 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * 
      * @param authorization 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun listDogeCoinAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun listDogeCoinAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = listDogeCoinAccountsRequestConfig(authorization = authorization)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -276,7 +277,7 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param authorization 
      * @param accountName 
      * @param dogeCoinTransactionInput 
-     * @return AccountControllerResponse
+     * @return DogeCoinAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -285,11 +286,11 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun signDogeCoinTransaction(authorization: kotlin.String, accountName: kotlin.String, dogeCoinTransactionInput: DogeCoinTransactionInput) : AccountControllerResponse {
+    fun signDogeCoinTransaction(authorization: kotlin.String, accountName: kotlin.String, dogeCoinTransactionInput: DogeCoinTransactionInput) : DogeCoinAPIResponse {
         val localVarResponse = signDogeCoinTransactionWithHttpInfo(authorization = authorization, accountName = accountName, dogeCoinTransactionInput = dogeCoinTransactionInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as DogeCoinAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -309,16 +310,16 @@ class DogeCoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param authorization 
      * @param accountName 
      * @param dogeCoinTransactionInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<DogeCoinAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun signDogeCoinTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, dogeCoinTransactionInput: DogeCoinTransactionInput) : ApiResponse<AccountControllerResponse?> {
+    fun signDogeCoinTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, dogeCoinTransactionInput: DogeCoinTransactionInput) : ApiResponse<DogeCoinAPIResponse?> {
         val localVariableConfig = signDogeCoinTransactionRequestConfig(authorization = authorization, accountName = accountName, dogeCoinTransactionInput = dogeCoinTransactionInput)
 
-        return request<DogeCoinTransactionInput, AccountControllerResponse>(
+        return request<DogeCoinTransactionInput, DogeCoinAPIResponse>(
             localVariableConfig
         )
     }

@@ -1,6 +1,6 @@
 # TronApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a id="createTronAccount"></a>
 # **createTronAccount**
-> AccountControllerResponse createTronAccount(authorization, tronInput)
+> AccountAPIResponse createTronAccount(authorization, tronInput)
 
 
 
@@ -26,7 +26,7 @@ val apiInstance = TronApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val tronInput : TronInput =  // TronInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.createTronAccount(authorization, tronInput)
+    val result : AccountAPIResponse = apiInstance.createTronAccount(authorization, tronInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TronApi#createTronAccount")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Configure BearerAuth:
 
 <a id="getTronAccount"></a>
 # **getTronAccount**
-> AccountControllerResponse getTronAccount(authorization, accountName)
+> AccountAPIResponse getTronAccount(authorization, accountName)
 
 
 
@@ -79,7 +79,7 @@ val apiInstance = TronApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.getTronAccount(authorization, accountName)
+    val result : AccountAPIResponse = apiInstance.getTronAccount(authorization, accountName)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TronApi#getTronAccount")
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Configure BearerAuth:
 
 <a id="listTronAccounts"></a>
 # **listTronAccounts**
-> AccountControllerResponse listTronAccounts(authorization)
+> AccountAPIResponse listTronAccounts(authorization)
 
 
 
@@ -131,7 +131,7 @@ Configure BearerAuth:
 val apiInstance = TronApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.listTronAccounts(authorization)
+    val result : AccountAPIResponse = apiInstance.listTronAccounts(authorization)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TronApi#listTronAccounts")
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Configure BearerAuth:
 
 <a id="signTronTransaction"></a>
 # **signTronTransaction**
-> AccountControllerResponse signTronTransaction(authorization, accountName, tronTransactionInput)
+> TronAPIResponse signTronTransaction(authorization, accountName, tronTransactionInput)
 
 
 
@@ -184,7 +184,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val tronTransactionInput : TronTransactionInput =  // TronTransactionInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.signTronTransaction(authorization, accountName, tronTransactionInput)
+    val result : TronAPIResponse = apiInstance.signTronTransaction(authorization, accountName, tronTransactionInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TronApi#signTronTransaction")
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TronAPIResponse**](TronAPIResponse.md)
 
 ### Authorization
 

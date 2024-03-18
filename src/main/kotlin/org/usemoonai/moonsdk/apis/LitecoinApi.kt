@@ -19,7 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import org.usemoonai.moonsdk.models.AccountControllerResponse
+import org.usemoonai.moonsdk.models.AccountAPIResponse
+import org.usemoonai.moonsdk.models.LitecoinAPIResponse
 import org.usemoonai.moonsdk.models.LitecoinInput
 import org.usemoonai.moonsdk.models.LitecoinTransactionInput
 
@@ -43,7 +44,7 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -52,7 +53,7 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param litecoinInput 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +62,11 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createLitecoinAccount(authorization: kotlin.String, litecoinInput: LitecoinInput) : AccountControllerResponse {
+    fun createLitecoinAccount(authorization: kotlin.String, litecoinInput: LitecoinInput) : AccountAPIResponse {
         val localVarResponse = createLitecoinAccountWithHttpInfo(authorization = authorization, litecoinInput = litecoinInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -84,16 +85,16 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param litecoinInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createLitecoinAccountWithHttpInfo(authorization: kotlin.String, litecoinInput: LitecoinInput) : ApiResponse<AccountControllerResponse?> {
+    fun createLitecoinAccountWithHttpInfo(authorization: kotlin.String, litecoinInput: LitecoinInput) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = createLitecoinAccountRequestConfig(authorization = authorization, litecoinInput = litecoinInput)
 
-        return request<LitecoinInput, AccountControllerResponse>(
+        return request<LitecoinInput, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -128,7 +129,7 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param accountName 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -137,11 +138,11 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getLitecoinAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountControllerResponse {
+    fun getLitecoinAccount(authorization: kotlin.String, accountName: kotlin.String) : AccountAPIResponse {
         val localVarResponse = getLitecoinAccountWithHttpInfo(authorization = authorization, accountName = accountName)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -160,16 +161,16 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * @param authorization 
      * @param accountName 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getLitecoinAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun getLitecoinAccountWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = getLitecoinAccountRequestConfig(authorization = authorization, accountName = accountName)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -202,7 +203,7 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * 
      * @param authorization 
-     * @return AccountControllerResponse
+     * @return AccountAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -211,11 +212,11 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun listLitecoinAccounts(authorization: kotlin.String) : AccountControllerResponse {
+    fun listLitecoinAccounts(authorization: kotlin.String) : AccountAPIResponse {
         val localVarResponse = listLitecoinAccountsWithHttpInfo(authorization = authorization)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -233,16 +234,16 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * 
      * 
      * @param authorization 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AccountAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun listLitecoinAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountControllerResponse?> {
+    fun listLitecoinAccountsWithHttpInfo(authorization: kotlin.String) : ApiResponse<AccountAPIResponse?> {
         val localVariableConfig = listLitecoinAccountsRequestConfig(authorization = authorization)
 
-        return request<Unit, AccountControllerResponse>(
+        return request<Unit, AccountAPIResponse>(
             localVariableConfig
         )
     }
@@ -276,7 +277,7 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param authorization 
      * @param accountName 
      * @param litecoinTransactionInput 
-     * @return AccountControllerResponse
+     * @return LitecoinAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -285,11 +286,11 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun signLitecoinTransaction(authorization: kotlin.String, accountName: kotlin.String, litecoinTransactionInput: LitecoinTransactionInput) : AccountControllerResponse {
+    fun signLitecoinTransaction(authorization: kotlin.String, accountName: kotlin.String, litecoinTransactionInput: LitecoinTransactionInput) : LitecoinAPIResponse {
         val localVarResponse = signLitecoinTransactionWithHttpInfo(authorization = authorization, accountName = accountName, litecoinTransactionInput = litecoinTransactionInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as LitecoinAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -309,16 +310,16 @@ class LitecoinApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param authorization 
      * @param accountName 
      * @param litecoinTransactionInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<LitecoinAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun signLitecoinTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, litecoinTransactionInput: LitecoinTransactionInput) : ApiResponse<AccountControllerResponse?> {
+    fun signLitecoinTransactionWithHttpInfo(authorization: kotlin.String, accountName: kotlin.String, litecoinTransactionInput: LitecoinTransactionInput) : ApiResponse<LitecoinAPIResponse?> {
         val localVariableConfig = signLitecoinTransactionRequestConfig(authorization = authorization, accountName = accountName, litecoinTransactionInput = litecoinTransactionInput)
 
-        return request<LitecoinTransactionInput, AccountControllerResponse>(
+        return request<LitecoinTransactionInput, LitecoinAPIResponse>(
             localVariableConfig
         )
     }

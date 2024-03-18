@@ -1,6 +1,6 @@
 # ERC1155Api
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a id="balanceOf"></a>
 # **balanceOf**
-> AccountControllerResponse balanceOf(name, authorization, erc1155Request)
+> TransactionAPIResponse balanceOf(name, authorization, erc1155Request)
 
 
 
@@ -29,7 +29,7 @@ val name : kotlin.String = name_example // kotlin.String |
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val erc1155Request : Erc1155Request =  // Erc1155Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.balanceOf(name, authorization, erc1155Request)
+    val result : TransactionAPIResponse = apiInstance.balanceOf(name, authorization, erc1155Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ERC1155Api#balanceOf")
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Configure BearerAuth:
 
 <a id="balanceOfBatch"></a>
 # **balanceOfBatch**
-> AccountControllerResponse balanceOfBatch(name, authorization, erc1155Request)
+> TransactionAPIResponse balanceOfBatch(name, authorization, erc1155Request)
 
 
 
@@ -84,7 +84,7 @@ val name : kotlin.String = name_example // kotlin.String |
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val erc1155Request : Erc1155Request =  // Erc1155Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.balanceOfBatch(name, authorization, erc1155Request)
+    val result : TransactionAPIResponse = apiInstance.balanceOfBatch(name, authorization, erc1155Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ERC1155Api#balanceOfBatch")
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -124,7 +124,7 @@ Configure BearerAuth:
 
 <a id="isApprovedForAll"></a>
 # **isApprovedForAll**
-> AccountControllerResponse isApprovedForAll(name, authorization, erc1155Request)
+> TransactionAPIResponse isApprovedForAll(name, authorization, erc1155Request)
 
 
 
@@ -139,7 +139,7 @@ val name : kotlin.String = name_example // kotlin.String |
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val erc1155Request : Erc1155Request =  // Erc1155Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.isApprovedForAll(name, authorization, erc1155Request)
+    val result : TransactionAPIResponse = apiInstance.isApprovedForAll(name, authorization, erc1155Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ERC1155Api#isApprovedForAll")
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -179,7 +179,7 @@ Configure BearerAuth:
 
 <a id="safeBatchTransferFrom"></a>
 # **safeBatchTransferFrom**
-> AccountControllerResponse safeBatchTransferFrom(name, authorization, erc1155Request)
+> TransactionAPIResponse safeBatchTransferFrom(name, authorization, erc1155Request)
 
 
 
@@ -194,7 +194,7 @@ val name : kotlin.String = name_example // kotlin.String |
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val erc1155Request : Erc1155Request =  // Erc1155Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.safeBatchTransferFrom(name, authorization, erc1155Request)
+    val result : TransactionAPIResponse = apiInstance.safeBatchTransferFrom(name, authorization, erc1155Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ERC1155Api#safeBatchTransferFrom")
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Configure BearerAuth:
 
 <a id="safeTransferFrom"></a>
 # **safeTransferFrom**
-> AccountControllerResponse safeTransferFrom(name, authorization, erc1155Request)
+> TransactionAPIResponse safeTransferFrom(name, authorization, erc1155Request)
 
 
 
@@ -249,7 +249,7 @@ val name : kotlin.String = name_example // kotlin.String |
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val erc1155Request : Erc1155Request =  // Erc1155Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.safeTransferFrom(name, authorization, erc1155Request)
+    val result : TransactionAPIResponse = apiInstance.safeTransferFrom(name, authorization, erc1155Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ERC1155Api#safeTransferFrom")
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -289,7 +289,7 @@ Configure BearerAuth:
 
 <a id="setApprovalForAll"></a>
 # **setApprovalForAll**
-> AccountControllerResponse setApprovalForAll(name, authorization, erc1155Request)
+> TransactionAPIResponse setApprovalForAll(name, authorization, erc1155Request)
 
 
 
@@ -304,7 +304,7 @@ val name : kotlin.String = name_example // kotlin.String |
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val erc1155Request : Erc1155Request =  // Erc1155Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.setApprovalForAll(name, authorization, erc1155Request)
+    val result : TransactionAPIResponse = apiInstance.setApprovalForAll(name, authorization, erc1155Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ERC1155Api#setApprovalForAll")
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 

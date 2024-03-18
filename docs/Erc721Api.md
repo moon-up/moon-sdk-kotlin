@@ -1,6 +1,6 @@
 # Erc721Api
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a id="approve"></a>
 # **approve**
-> AccountControllerResponse approve(authorization, name, erc721Request)
+> TransactionAPIResponse approve(authorization, name, erc721Request)
 
 
 
@@ -35,7 +35,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val erc721Request : Erc721Request =  // Erc721Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.approve(authorization, name, erc721Request)
+    val result : TransactionAPIResponse = apiInstance.approve(authorization, name, erc721Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc721Api#approve")
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Configure BearerAuth:
 
 <a id="balanceOf"></a>
 # **balanceOf**
-> AccountControllerResponse balanceOf(authorization, name, erc721Request)
+> TransactionAPIResponse balanceOf(authorization, name, erc721Request)
 
 
 
@@ -90,7 +90,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val erc721Request : Erc721Request =  // Erc721Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.balanceOf(authorization, name, erc721Request)
+    val result : TransactionAPIResponse = apiInstance.balanceOf(authorization, name, erc721Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc721Api#balanceOf")
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ Configure BearerAuth:
 
 <a id="getApproved"></a>
 # **getApproved**
-> AccountControllerResponse getApproved(authorization, name, erc721Request)
+> TransactionAPIResponse getApproved(authorization, name, erc721Request)
 
 
 
@@ -145,7 +145,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val erc721Request : Erc721Request =  // Erc721Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.getApproved(authorization, name, erc721Request)
+    val result : TransactionAPIResponse = apiInstance.getApproved(authorization, name, erc721Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc721Api#getApproved")
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -185,7 +185,7 @@ Configure BearerAuth:
 
 <a id="isApprovedForAll"></a>
 # **isApprovedForAll**
-> AccountControllerResponse isApprovedForAll(authorization, name, erc721Request)
+> TransactionAPIResponse isApprovedForAll(authorization, name, erc721Request)
 
 
 
@@ -200,7 +200,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val erc721Request : Erc721Request =  // Erc721Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.isApprovedForAll(authorization, name, erc721Request)
+    val result : TransactionAPIResponse = apiInstance.isApprovedForAll(authorization, name, erc721Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc721Api#isApprovedForAll")
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Configure BearerAuth:
 
 <a id="name"></a>
 # **name**
-> AccountControllerResponse name(authorization, name, erc721Request)
+> TransactionAPIResponse name(authorization, name, erc721Request)
 
 
 
@@ -255,7 +255,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val erc721Request : Erc721Request =  // Erc721Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.name(authorization, name, erc721Request)
+    val result : TransactionAPIResponse = apiInstance.name(authorization, name, erc721Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc721Api#name")
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ Configure BearerAuth:
 
 <a id="ownerOf"></a>
 # **ownerOf**
-> AccountControllerResponse ownerOf(authorization, name, erc721Request)
+> TransactionAPIResponse ownerOf(authorization, name, erc721Request)
 
 
 
@@ -310,7 +310,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val erc721Request : Erc721Request =  // Erc721Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.ownerOf(authorization, name, erc721Request)
+    val result : TransactionAPIResponse = apiInstance.ownerOf(authorization, name, erc721Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc721Api#ownerOf")
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Configure BearerAuth:
 
 <a id="safeTransferFrom"></a>
 # **safeTransferFrom**
-> AccountControllerResponse safeTransferFrom(authorization, name, erc721Request)
+> TransactionAPIResponse safeTransferFrom(authorization, name, erc721Request)
 
 
 
@@ -365,7 +365,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val erc721Request : Erc721Request =  // Erc721Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.safeTransferFrom(authorization, name, erc721Request)
+    val result : TransactionAPIResponse = apiInstance.safeTransferFrom(authorization, name, erc721Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc721Api#safeTransferFrom")
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -405,7 +405,7 @@ Configure BearerAuth:
 
 <a id="setApprovalForAll"></a>
 # **setApprovalForAll**
-> AccountControllerResponse setApprovalForAll(authorization, name, erc721Request)
+> TransactionAPIResponse setApprovalForAll(authorization, name, erc721Request)
 
 
 
@@ -420,7 +420,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val erc721Request : Erc721Request =  // Erc721Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.setApprovalForAll(authorization, name, erc721Request)
+    val result : TransactionAPIResponse = apiInstance.setApprovalForAll(authorization, name, erc721Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc721Api#setApprovalForAll")
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -460,7 +460,7 @@ Configure BearerAuth:
 
 <a id="symbol"></a>
 # **symbol**
-> AccountControllerResponse symbol(authorization, name, erc721Request)
+> TransactionAPIResponse symbol(authorization, name, erc721Request)
 
 
 
@@ -475,7 +475,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val erc721Request : Erc721Request =  // Erc721Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.symbol(authorization, name, erc721Request)
+    val result : TransactionAPIResponse = apiInstance.symbol(authorization, name, erc721Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc721Api#symbol")
@@ -496,7 +496,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -515,7 +515,7 @@ Configure BearerAuth:
 
 <a id="tokenUri"></a>
 # **tokenUri**
-> AccountControllerResponse tokenUri(authorization, name, erc721Request)
+> TransactionAPIResponse tokenUri(authorization, name, erc721Request)
 
 
 
@@ -530,7 +530,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val erc721Request : Erc721Request =  // Erc721Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.tokenUri(authorization, name, erc721Request)
+    val result : TransactionAPIResponse = apiInstance.tokenUri(authorization, name, erc721Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc721Api#tokenUri")
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -570,7 +570,7 @@ Configure BearerAuth:
 
 <a id="transfer"></a>
 # **transfer**
-> AccountControllerResponse transfer(authorization, name, erc721Request)
+> TransactionAPIResponse transfer(authorization, name, erc721Request)
 
 
 
@@ -585,7 +585,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val erc721Request : Erc721Request =  // Erc721Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.transfer(authorization, name, erc721Request)
+    val result : TransactionAPIResponse = apiInstance.transfer(authorization, name, erc721Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc721Api#transfer")
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 
@@ -625,7 +625,7 @@ Configure BearerAuth:
 
 <a id="transferFrom"></a>
 # **transferFrom**
-> AccountControllerResponse transferFrom(authorization, name, erc721Request)
+> TransactionAPIResponse transferFrom(authorization, name, erc721Request)
 
 
 
@@ -640,7 +640,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val name : kotlin.String = name_example // kotlin.String | 
 val erc721Request : Erc721Request =  // Erc721Request | 
 try {
-    val result : AccountControllerResponse = apiInstance.transferFrom(authorization, name, erc721Request)
+    val result : TransactionAPIResponse = apiInstance.transferFrom(authorization, name, erc721Request)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling Erc721Api#transferFrom")
@@ -661,7 +661,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**TransactionAPIResponse**](TransactionAPIResponse.md)
 
 ### Authorization
 

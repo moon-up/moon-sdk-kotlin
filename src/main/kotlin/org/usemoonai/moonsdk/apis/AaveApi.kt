@@ -20,7 +20,8 @@ import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
 import org.usemoonai.moonsdk.models.AaveInput
-import org.usemoonai.moonsdk.models.AccountControllerResponse
+import org.usemoonai.moonsdk.models.AaveReservesAPIResponse
+import org.usemoonai.moonsdk.models.TransactionAPIResponse
 
 import com.squareup.moshi.Json
 
@@ -42,7 +43,7 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://vault-api.usemoon.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app")
         }
     }
 
@@ -52,7 +53,7 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param authorization 
      * @param name 
      * @param aaveInput 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +62,11 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun borrow(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : AccountControllerResponse {
+    fun borrow(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : TransactionAPIResponse {
         val localVarResponse = borrowWithHttpInfo(authorization = authorization, name = name, aaveInput = aaveInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -85,16 +86,16 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param authorization 
      * @param name 
      * @param aaveInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun borrowWithHttpInfo(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : ApiResponse<AccountControllerResponse?> {
+    fun borrowWithHttpInfo(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = borrowRequestConfig(authorization = authorization, name = name, aaveInput = aaveInput)
 
-        return request<AaveInput, AccountControllerResponse>(
+        return request<AaveInput, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -131,7 +132,7 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param authorization 
      * @param name 
      * @param aaveInput 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -140,11 +141,11 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun lend(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : AccountControllerResponse {
+    fun lend(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : TransactionAPIResponse {
         val localVarResponse = lendWithHttpInfo(authorization = authorization, name = name, aaveInput = aaveInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -164,16 +165,16 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param authorization 
      * @param name 
      * @param aaveInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun lendWithHttpInfo(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : ApiResponse<AccountControllerResponse?> {
+    fun lendWithHttpInfo(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = lendRequestConfig(authorization = authorization, name = name, aaveInput = aaveInput)
 
-        return request<AaveInput, AccountControllerResponse>(
+        return request<AaveInput, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -210,7 +211,7 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param authorization 
      * @param name 
      * @param aaveInput 
-     * @return AccountControllerResponse
+     * @return TransactionAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -219,11 +220,11 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun repay(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : AccountControllerResponse {
+    fun repay(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : TransactionAPIResponse {
         val localVarResponse = repayWithHttpInfo(authorization = authorization, name = name, aaveInput = aaveInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TransactionAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -243,16 +244,16 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param authorization 
      * @param name 
      * @param aaveInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<TransactionAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun repayWithHttpInfo(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : ApiResponse<AccountControllerResponse?> {
+    fun repayWithHttpInfo(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : ApiResponse<TransactionAPIResponse?> {
         val localVariableConfig = repayRequestConfig(authorization = authorization, name = name, aaveInput = aaveInput)
 
-        return request<AaveInput, AccountControllerResponse>(
+        return request<AaveInput, TransactionAPIResponse>(
             localVariableConfig
         )
     }
@@ -289,7 +290,7 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param authorization 
      * @param name 
      * @param aaveInput 
-     * @return AccountControllerResponse
+     * @return AaveReservesAPIResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -298,11 +299,11 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun userReserveData(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : AccountControllerResponse {
+    fun userReserveData(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : AaveReservesAPIResponse {
         val localVarResponse = userReserveDataWithHttpInfo(authorization = authorization, name = name, aaveInput = aaveInput)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AccountControllerResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AaveReservesAPIResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -322,16 +323,16 @@ class AaveApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param authorization 
      * @param name 
      * @param aaveInput 
-     * @return ApiResponse<AccountControllerResponse?>
+     * @return ApiResponse<AaveReservesAPIResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun userReserveDataWithHttpInfo(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : ApiResponse<AccountControllerResponse?> {
+    fun userReserveDataWithHttpInfo(authorization: kotlin.String, name: kotlin.String, aaveInput: AaveInput) : ApiResponse<AaveReservesAPIResponse?> {
         val localVariableConfig = userReserveDataRequestConfig(authorization = authorization, name = name, aaveInput = aaveInput)
 
-        return request<AaveInput, AccountControllerResponse>(
+        return request<AaveInput, AaveReservesAPIResponse>(
             localVariableConfig
         )
     }

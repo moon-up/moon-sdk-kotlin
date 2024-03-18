@@ -1,6 +1,6 @@
 # BitcoinApi
 
-All URIs are relative to *https://vault-api.usemoon.ai*
+All URIs are relative to *https://moon-vault-api-git-ew-supabase-migration-moonup.vercel.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a id="createBitcoinAccount"></a>
 # **createBitcoinAccount**
-> AccountControllerResponse createBitcoinAccount(authorization, bitcoinInput)
+> AccountAPIResponse createBitcoinAccount(authorization, bitcoinInput)
 
 
 
@@ -26,7 +26,7 @@ val apiInstance = BitcoinApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val bitcoinInput : BitcoinInput =  // BitcoinInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.createBitcoinAccount(authorization, bitcoinInput)
+    val result : AccountAPIResponse = apiInstance.createBitcoinAccount(authorization, bitcoinInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling BitcoinApi#createBitcoinAccount")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Configure BearerAuth:
 
 <a id="getBitcoinAccount"></a>
 # **getBitcoinAccount**
-> AccountControllerResponse getBitcoinAccount(authorization, accountName)
+> AccountAPIResponse getBitcoinAccount(authorization, accountName)
 
 
 
@@ -79,7 +79,7 @@ val apiInstance = BitcoinApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.getBitcoinAccount(authorization, accountName)
+    val result : AccountAPIResponse = apiInstance.getBitcoinAccount(authorization, accountName)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling BitcoinApi#getBitcoinAccount")
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Configure BearerAuth:
 
 <a id="listBitcoinAccounts"></a>
 # **listBitcoinAccounts**
-> AccountControllerResponse listBitcoinAccounts(authorization)
+> AccountAPIResponse listBitcoinAccounts(authorization)
 
 
 
@@ -131,7 +131,7 @@ Configure BearerAuth:
 val apiInstance = BitcoinApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 try {
-    val result : AccountControllerResponse = apiInstance.listBitcoinAccounts(authorization)
+    val result : AccountAPIResponse = apiInstance.listBitcoinAccounts(authorization)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling BitcoinApi#listBitcoinAccounts")
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**AccountAPIResponse**](AccountAPIResponse.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Configure BearerAuth:
 
 <a id="signBitcoinTransaction"></a>
 # **signBitcoinTransaction**
-> AccountControllerResponse signBitcoinTransaction(authorization, accountName, bitcoinTransactionInput)
+> BitcoinAPIResponse signBitcoinTransaction(authorization, accountName, bitcoinTransactionInput)
 
 
 
@@ -184,7 +184,7 @@ val authorization : kotlin.String = authorization_example // kotlin.String |
 val accountName : kotlin.String = accountName_example // kotlin.String | 
 val bitcoinTransactionInput : BitcoinTransactionInput =  // BitcoinTransactionInput | 
 try {
-    val result : AccountControllerResponse = apiInstance.signBitcoinTransaction(authorization, accountName, bitcoinTransactionInput)
+    val result : BitcoinAPIResponse = apiInstance.signBitcoinTransaction(authorization, accountName, bitcoinTransactionInput)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling BitcoinApi#signBitcoinTransaction")
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountControllerResponse**](AccountControllerResponse.md)
+[**BitcoinAPIResponse**](BitcoinAPIResponse.md)
 
 ### Authorization
 
